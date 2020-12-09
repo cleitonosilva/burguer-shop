@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "burguer"
+  "defaultProject": "burguer",
+  "cli": {
+    "analytics": "02e9c33c-a040-4f16-864c-71f222603785"
+  }
 }
