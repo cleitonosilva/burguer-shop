@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { PromotionsHomeComponent } from './promotions-home/promotions-home.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PromotionsHomeComponent } from './promotions-home/promotions-home.compo
     HomeComponent,
     MenuComponent,
     ProductsListComponent,
-    PromotionsHomeComponent
+    PromotionsHomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
