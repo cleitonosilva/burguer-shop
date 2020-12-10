@@ -1,0 +1,17 @@
+.nav__item {
+    color: #ffff;
+    font-size: 19px;
+    background: transparent;
+
+    &:hover {
+        background:#E32C2C;
+    }
+
+    .nav__item--title {
+        background: none;
+        font-size: 19px;
+        color: #ffff;
+
+    }
+}
+
