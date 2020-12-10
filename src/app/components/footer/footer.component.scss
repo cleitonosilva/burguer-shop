@@ -10,32 +10,37 @@
     height: 121px;
     margin-top: 117px;
  }   
-}
+
 .social--title{
     color: #ffff;
     font-size:48px;
     width: 296px;
     height: 56px;
+}
 
-.social--img{
+    .social--img{
     width: 296px;
     height: 56px;
     display: grid;
     grid-template-columns: repeat(
       3,
       1fr
-    ); /*adapta e divide proporcionalmente as colunas e os quadrados */
-    margin-left: 15px;
+    );
+    margin-left: 15px !important;
  }
-}
 
+.newletter--footer{
+    width:296px;
+    height: 121px;
+    margin-top: 117px;
+} 
 
 .newletter--title{
     color: #ffff;
     font-size:48px;
     width: 296px;
     height: 56px;
-
+}
 
 .newletter--btn{
     background: #E32C2C;
@@ -43,9 +48,10 @@
     margin-left: 21px !important;
 }
 
-.footer--newletter{
+.newletter--footer{
     width:296px;
     height: 121px;
     margin-top: 117px;
  }
+
 }
