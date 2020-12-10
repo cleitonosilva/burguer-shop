@@ -11,13 +11,15 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { ProductsListComponent } from './products-list/products-list.component';
+import { PromotionsHomeComponent } from './promotions-home/promotions-home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     MenuComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    PromotionsHomeComponent
   ],
   imports: [
     BrowserModule,
