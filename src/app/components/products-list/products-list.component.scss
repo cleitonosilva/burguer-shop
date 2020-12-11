@@ -29,27 +29,42 @@
         background-repeat: no-repeat;
 
     }
+
+    .card--box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
     
     .card--title {
         margin-top: 16px;
         margin-left: 8px;
         font-size: 16px;
     }
+
+
+    .card--type {
+        margin-top: 16px;
+        margin-right: 8px;
+        font-size: 16px;
+    }
+
     .card--product {
-        font-size:24px;
+        font-size: 24px;
         margin-left: 8px;
         margin-top: 16px;
     }
     .card--description {
-        width:355px;
-        height:64px;
+        width: 355px;
+        height: 64px;
         margin-left: 8px;
         margin-right: 7px;
         margin-top: 16px;
     }
     .card--cart {
-        width:355px;
-        height:64px;
+        width: 355px;
+        height: 64px;
         margin-left: 8px;
         margin-right: 7px;
         margin-top: 16px;
@@ -60,7 +75,7 @@
         
     }
     .cart--price {
-        width:50%;
+        width: 50%;
         display: flex;
         align-items: center;
         justify-items: center;
@@ -68,16 +83,16 @@
     }
 
     .cart--purchase {
-        width:50%;
+        width: 50%;
         display: flex;
         flex-direction: row-reverse;
     }
     .cart--btn {
-        width:92px;
+        width: 92px;
         height: 30px;
         background: #E32C2C;
         color: #ffff;
-        font-size:12px;
+        font-size: 12px;
         outline: none;
         border: none;
     }
@@ -85,7 +100,7 @@
 
     .price--info {
     margin-left: 8px;
-    font-size:12px;
+    font-size: 12px;
  }
 
 
