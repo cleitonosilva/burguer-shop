@@ -12,6 +12,8 @@
   left: 0;
   height: 680px;
   background-repeat: no-repeat;
+   display: flex;
+  flex-direction: column;
 
   .home--box {
     display: flex;
