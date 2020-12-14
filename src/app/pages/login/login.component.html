@@ -1,0 +1,18 @@
+<app-menu></app-menu>
+
+<section class="login">
+    <h2 class="login--title">Login</h2>
+
+    <div class="login--box">
+        <div class="login--wrapper">
+            <span>Email:</span>
+            <input [(ngModel)]="usuario.email" type="text" class="form-control">
+            <span>Senha:</span>
+            <input [(ngModel)]="usuario.senha" type="password" class="form-control">
+
+            <button class="btn" type="button" (click)="fazerLogin()">Login</button>
+
+        </div>
+    </div>
+</section>
+

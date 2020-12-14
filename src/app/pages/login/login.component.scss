@@ -1,0 +1,36 @@
+.login {
+
+    .login--title {
+    width: 230px;
+    height: 75px;
+    color: #E32C2C;
+    font-size: 64px;
+    margin-top: 107px;
+    margin-right: 135px;
+    }
+    
+.login--box{
+
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items:center;
+    
+    }
+
+.login--wrapper{
+    width: 670px;
+    height: 271px;
+    display: flex;
+    flex-direction: column;
+    
+
+    }
+.btn{
+    background:#E32C2C;
+    color: #ffff;
+    margin-top:20px;
+    width: 50%;
+    margin-left: 50%;
+}
+}
