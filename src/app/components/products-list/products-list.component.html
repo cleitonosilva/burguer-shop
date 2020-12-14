@@ -1,22 +1,22 @@
-<div class="cards">
+<!-- <div class="cards" >
 
-    <div class="card">
+    <div class="card" *ngFor="let p of produtos">
         <div class="card--img">
-            <img src="../../../assets/img/burguerproduct.png" alt="" class="card--img">
+            <img src="../../../assets/img/burguerproduct.png"  class="card--img">
         </div>
-        <div class="card--body">
+        <div class="card--body"  >
             <div class="card--box">
-              <b class="card--title">La Vosier </b>
-              <b class="card--type">Promoções </b>
+              <b class="card--title">{{p.grif}} </b>
+              <b class="card--type">{{p.categoria}} </b>
             </div>
-              <h4 class="card--product">Super Hamburguer</h4>
+              <h4 class="card--product">{{p.produto}}</h4>
             <div class="card--description">
-              <p>Delicia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-            </div>
+              <p>{{p.descricao}}</p>
+            </div>  
             <div class="card--cart">
                 <div class="cart--price">
                     <p class="price--info">Preço: </p>
-                    <p class="price--info">R$20,00</p>
+                    <p class="price--info">{{p.preco}}</p>
                 </div>
                 <div class="cart--purchase">
                     <button class="cart--btn">Adicionar</button>
@@ -24,214 +24,7 @@
             </div>
         </div>
     </div>
-   
-    <div class="card">
-        <div class="card--img">
-            <img src="../../../assets/img/burguerproduct.png" alt="" class="card--img">
-        </div>
-        <div class="card--body">
-            <div class="card--box">
-                <b class="card--title">La Vosier </b>
-                <b class="card--type">Promoções </b>
-            </div>
-            <h4 class="card--product">Super Hamburguer</h4>
-            <div class="card--description">
-                <p>Delicia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-            </div>
-            <div class="card--cart">
-                <div class="cart--price">
-                    <p class="price--info">Preço: </p>
-                    <p class="price--info">R$20,00</p>
-                </div>
-                <div class="cart--purchase">
-                    <button class="cart--btn">Adicionar</button>
-                </div>
-            </div>
-        </div>
-    </div>
+</div> -->
 
-    <div class="card">
-        <div class="card--img">
-            <img src="../../../assets/img/burguerproduct.png" alt="" class="card--img">
-        </div>
-        <div class="card--body">
-            <div class="card--box">
-                <b class="card--title">La Vosier </b>
-                <b class="card--type">Promoções </b>
-            </div>
-            <h4 class="card--product">Super Hamburguer</h4>
-            <div class="card--description">
-                <p>Delicia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-            </div>
-            <div class="card--cart">
-                <div class="cart--price">
-                    <p class="price--info">Preço: </p>
-                    <p class="price--info">R$20,00</p>
-                </div>
-                <div class="cart--purchase">
-                    <button class="cart--btn">Adicionar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-
-<div class="cards">
-
-    <div class="card">
-        <div class="card--img">
-            <img src="../../../assets/img/burguerproduct.png" alt="" class="card--img">
-        </div>
-        <div class="card--body">
-            <div class="card--box">
-                <b class="card--title">La Vosier </b>
-                <b class="card--type">Promoções </b>
-            </div>
-            <h4 class="card--product">Super Hamburguer</h4>
-            <div class="card--description">
-                <p>Delicia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-            </div>
-            <div class="card--cart">
-                <div class="cart--price">
-                    <p class="price--info">Preço: </p>
-                    <p class="price--info">R$20,00</p>
-                </div>
-                <div class="cart--purchase">
-                    <button class="cart--btn">Adicionar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-   
-    <div class="card">
-        <div class="card--img">
-            <img src="../../../assets/img/burguerproduct.png" alt="" class="card--img">
-        </div>
-        <div class="card--body">
-            <div class="card--box">
-                <b class="card--title">La Vosier </b>
-                <b class="card--type">Promoções </b>
-            </div>
-            <h4 class="card--product">Super Hamburguer</h4>
-            <div class="card--description">
-                <p>Delicia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-            </div>
-            <div class="card--cart">
-                <div class="cart--price">
-                    <p class="price--info">Preço: </p>
-                    <p class="price--info">R$20,00</p>
-                </div>
-                <div class="cart--purchase">
-                    <button class="cart--btn">Adicionar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card--img">
-            <img src="../../../assets/img/burguerproduct.png" alt="" class="card--img">
-        </div>
-        <div class="card--body">
-            <div class="card--box">
-                <b class="card--title">La Vosier </b>
-                <b class="card--type">Promoções </b>
-            </div>
-            <h4 class="card--product">Super Hamburguer</h4>
-            <div class="card--description">
-                <p>Delicia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-            </div>
-            <div class="card--cart">
-                <div class="cart--price">
-                    <p class="price--info">Preço: </p>
-                    <p class="price--info">R$20,00</p>
-                </div>
-                <div class="cart--purchase">
-                    <button class="cart--btn">Adicionar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-<div class="cards">
-
-    <div class="card">
-        <div class="card--img">
-            <img src="../../../assets/img/burguerproduct.png" alt="" class="card--img">
-        </div>
-        <div class="card--body">
-            <div class="card--box">
-                <b class="card--title">La Vosier </b>
-                <b class="card--type">Promoções </b>
-            </div>
-            <h4 class="card--product">Super Hamburguer</h4>
-            <div class="card--description">
-                <p>Delicia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-            </div>
-            <div class="card--cart">
-                <div class="cart--price">
-                    <p class="price--info">Preço: </p>
-                    <p class="price--info">R$20,00</p>
-                </div>
-                <div class="cart--purchase">
-                    <button class="cart--btn">Adicionar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-   
-    <div class="card">
-        <div class="card--img">
-            <img src="../../../assets/img/burguerproduct.png" alt="" class="card--img">
-        </div>
-        <div class="card--body">
-            <div class="card--box">
-                <b class="card--title">La Vosier </b>
-                <b class="card--type">Promoções </b>
-            </div>
-            <h4 class="card--product">Super Hamburguer</h4>
-            <div class="card--description">
-                <p>Delicia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-            </div>
-            <div class="card--cart">
-                <div class="cart--price">
-                    <p class="price--info">Preço: </p>
-                    <p class="price--info">R$20,00</p>
-                </div>
-                <div class="cart--purchase">
-                    <button class="cart--btn">Adicionar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card--img">
-            <img src="../../../assets/img/burguerproduct.png" alt="" class="card--img">
-        </div>
-        <div class="card--body">
-            <div class="card--box">
-                <b class="card--title">La Vosier </b>
-                <b class="card--type">Promoções </b>
-            </div>
-            <h4 class="card--product">Super Hamburguer</h4>
-            <div class="card--description">
-                <p>Delicia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-            </div>
-            <div class="card--cart">
-                <div class="cart--price">
-                    <p class="price--info">Preço: </p>
-                    <p class="price--info">R$20,00</p>
-                </div>
-                <div class="cart--purchase">
-                    <button class="cart--btn">Adicionar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
+<app-generic-product-list [produtos]='produtos'></app-generic-product-list>
+    
