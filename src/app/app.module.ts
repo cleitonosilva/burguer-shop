@@ -20,6 +20,8 @@ import { CommonModule } from '@angular/common';
 import { GenericProductListComponent } from './shared/generic-product-list/generic-product-list.component';
 import { SnackComponent } from './pages/snack/snack.component';
 import { SnackListComponent } from './components/snack-list/snack-list.component';
+import { LoginComponent } from './pages/login/login.component';
+import { AuthService } from './pages/login/auth.service';
 
 @NgModule({
   declarations: [
@@ -34,19 +36,21 @@ import { SnackListComponent } from './components/snack-list/snack-list.component
     GenericProductListComponent,
     SnackComponent,
     SnackListComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    // CollapseModule.forRoot(),
-    // BsDropdownModule.forRoot(),
-    // FormsModule,
+    CollapseModule.forRoot(),
+    BsDropdownModule.forRoot(),
+    FormsModule,
     RouterModule,
     LocalStorageModule.forRoot({storageType : 'localStorage'}),
-    CommonModule
+    CommonModule,
+    
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
