@@ -8,7 +8,8 @@ import { SnackComponent } from './pages/snack/snack.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'bebidas', component: DrinksComponent},
-  {path: 'lanches', component: SnackComponent}
+  {path: 'lanches', component: SnackComponent},
+  { path: 'promocoes', component: HomeComponent }
 ];
 
 @NgModule({
