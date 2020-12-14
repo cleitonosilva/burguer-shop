@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import {products} from '../../data/products-list-source';
+import {Produto} from '../../models/products.model'
+
+
 @Component({
   selector: 'app-drinks',
   templateUrl: './drinks.component.html',
@@ -7,9 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DrinksComponent implements OnInit {
 
+  produtos: Produto[];
+
   constructor() { }
 
   ngOnInit(): void {
+     
+    const filterProduct = products.filter(p =>  p.categoria == 'Bebidas');
+    this.produtos = filterProduct
+
   }
 
 }
