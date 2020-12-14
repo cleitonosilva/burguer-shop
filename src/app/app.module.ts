@@ -18,6 +18,8 @@ import { DrinksListComponent } from './components/drinks-list/drinks-list.compon
 import {LocalStorageModule} from 'angular-2-local-storage'
 import { CommonModule } from '@angular/common';
 import { GenericProductListComponent } from './shared/generic-product-list/generic-product-list.component';
+import { SnackComponent } from './pages/snack/snack.component';
+import { SnackListComponent } from './components/snack-list/snack-list.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { GenericProductListComponent } from './shared/generic-product-list/gener
     DrinksComponent,
     DrinksListComponent,
     GenericProductListComponent,
+    SnackComponent,
+    SnackListComponent,
   ],
   imports: [
     BrowserModule,
