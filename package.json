@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~11.0.1",
     "@angular/platform-browser-dynamic": "~11.0.1",
     "@angular/router": "~11.0.1",
+    "angular-2-local-storage": "^3.0.2",
     "bootstrap": "^5.0.0-beta1",
     "ngx-bootstrap": "^6.2.0",
     "rxjs": "~6.6.0",
