@@ -22,6 +22,7 @@ import { SnackComponent } from './pages/snack/snack.component';
 import { SnackListComponent } from './components/snack-list/snack-list.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthService } from './pages/login/auth.service';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { AuthService } from './pages/login/auth.service';
     SnackComponent,
     SnackListComponent,
     LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
