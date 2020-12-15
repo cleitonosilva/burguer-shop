@@ -13,6 +13,15 @@ import { FormsModule } from '@angular/forms';
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { PromotionsHomeComponent } from './components/promotions-home/promotions-home.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { DrinksComponent } from './pages/drinks/drinks.component';
+import { DrinksListComponent } from './components/drinks-list/drinks-list.component';
+import {LocalStorageModule} from 'angular-2-local-storage'
+import { CommonModule } from '@angular/common';
+import { GenericProductListComponent } from './shared/generic-product-list/generic-product-list.component';
+import { SnackComponent } from './pages/snack/snack.component';
+import { SnackListComponent } from './components/snack-list/snack-list.component';
+import { LoginComponent } from './pages/login/login.component';
+import { AuthService } from './pages/login/auth.service';
 
 @NgModule({
   declarations: [
@@ -21,18 +30,27 @@ import { FooterComponent } from './components/footer/footer.component';
     MenuComponent,
     ProductsListComponent,
     PromotionsHomeComponent,
-    FooterComponent
+    FooterComponent,
+    DrinksComponent,
+    DrinksListComponent,
+    GenericProductListComponent,
+    SnackComponent,
+    SnackListComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    // CollapseModule.forRoot(),
-    // BsDropdownModule.forRoot(),
-    // FormsModule,
+    CollapseModule.forRoot(),
+    BsDropdownModule.forRoot(),
+    FormsModule,
     RouterModule,
+    LocalStorageModule.forRoot({storageType : 'localStorage'}),
+    CommonModule,
+    
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

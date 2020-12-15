@@ -1,4 +1,10 @@
-.nav__item {
+.nav--bg {
+    background-color: #020202a6;
+        
+}
+
+
+.nav--item {
     color: #ffff;
     font-size: 19px;
     background: transparent;
@@ -7,11 +13,12 @@
         background:#E32C2C;
     }
 
-    .nav__item--title {
+.nav--title {
         background: none;
         font-size: 19px;
         color: #ffff;
 
     }
+
 }
 
