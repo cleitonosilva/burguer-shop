@@ -23,6 +23,8 @@ import { SnackListComponent } from './components/snack-list/snack-list.component
 import { LoginComponent } from './pages/login/login.component';
 import { AuthService } from './pages/login/auth.service';
 import { RegisterComponent } from './pages/register/register.component';
+import { ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import { RegisterComponent } from './pages/register/register.component';
     RouterModule,
     LocalStorageModule.forRoot({storageType : 'localStorage'}),
     CommonModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     
   ],
   providers: [AuthService],
