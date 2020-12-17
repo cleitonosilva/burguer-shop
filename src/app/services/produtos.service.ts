@@ -1,10 +1,18 @@
 import { Injectable } from '@angular/core';
-import {LocalStorageService} from 'angular-2-local-storage'
+
+import { HttpClient} from '@angular/common/http';
+import { Produto } from './../models/products.model';
+import { Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProdutosService {
 
-  constructor(private localStorage :  LocalStorageService) { }
+  constructor(private http: HttpClient) { }
+  private url = "http://localhost:3000/produtos";
+
+  getProdutos(): Observable<Produto[]> {
+    return this.http.get<Produto[]>(this.url); 
+  }
 }

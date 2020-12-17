@@ -32,8 +32,8 @@
                 <div>
                   <label for="confirmarSenha">Confirmar Senha: </label>
                   <input id="confirmarSenha" type="password" class="form-control" formControlName="confirmarSenha">
-                  <div *ngIf=" formRegister.value.confirmarSenha != formRegister.value.senha">
-                    <p>
+                  <div *ngIf = "formRegister.controls['confirmarSenha']?.touched">
+                    <p *ngIf="formRegister.value.confirmarSenha != formRegister.value.senha">
                       As senhas não coincidem.
                     </p>
                   </div>
@@ -56,7 +56,7 @@
                 </div>
               
                 <br>
-                <div>
+                <div *ngIf="formRegister.value.confirmarSenha === formRegister.value.senha">
                   <button [disabled]="!formRegister.valid" class="btn">Enviar dados</button>
                 </div>
               
