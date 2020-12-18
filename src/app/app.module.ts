@@ -15,7 +15,7 @@ import { PromotionsHomeComponent } from './components/promotions-home/promotions
 import { FooterComponent } from './components/footer/footer.component';
 import { DrinksComponent } from './pages/drinks/drinks.component';
 import { DrinksListComponent } from './components/drinks-list/drinks-list.component';
-import {LocalStorageModule} from 'angular-2-local-storage'
+import { LocalStorageModule} from 'angular-2-local-storage'
 import { CommonModule } from '@angular/common';
 import { GenericProductListComponent } from './shared/generic-product-list/generic-product-list.component';
 import { SnackComponent } from './pages/snack/snack.component';
