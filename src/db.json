@@ -16,13 +16,35 @@
   "profile": {
     "name": "typicode"
   },
-  "funcio": [
-    { "id": 1, "nome": "Cleiton", "profissao": "tecnico" },
-    { "id": 2, "nome": "otavio", "profissao": "jogador" },
-    { "id": 3, "nome": "marlon", "profissao": "juiz" },
-    { "id": 4, "nome": "claudio", "profissao": "bandeirinha" }
+  "user": [
+    {
+      "id": 1,
+      "email": "falatom@hotmail.com",
+      "endereco": "rua doutor mario cabral 210",
+      "telefone": "21964099980",
+      "pontoReferencia": "4141",
+      "senha": "414141",
+      "confirmarSenha": "414141"
+    },
+    {
+      "email": "falatom@gmail.com",
+      "endereco": "rua doutor mario cabral 210",
+      "telefone": "21964099980",
+      "pontoReferencia": "110",
+      "senha": "1104",
+      "confirmarSenha": "1104",
+      "id": 2
+    },
+    {
+      "email": "falatom@hotmail.com",
+      "endereco": "rua doutor mario cabral 210",
+      "telefone": "21964099980",
+      "pontoReferencia": "45411",
+      "senha": "4545",
+      "confirmarSenha": "4545",
+      "id": 3
+    }
   ],
-
   "produtos": [
     {
       "grif": "La Vosier",
@@ -32,7 +54,6 @@
       "preco": 20,
       "url": "../../../assets/img/burguerproduct.png"
     },
-
     {
       "grif": "La Vosier",
       "categoria": "Promoções",
@@ -41,7 +62,6 @@
       "preco": 25,
       "url": "../../../assets/img/burguerproduct.png"
     },
-
     {
       "grif": "La Vosier",
       "categoria": "Promoções",
@@ -50,7 +70,6 @@
       "preco": 30,
       "url": "../../../assets/img/burguerproduct.png"
     },
-
     {
       "grif": "La Vosier",
       "categoria": "Promoções",
@@ -59,7 +78,6 @@
       "preco": 30,
       "url": "../../../assets/img/burguerproduct.png"
     },
-
     {
       "grif": "La Vosier",
       "categoria": "Promoções",
@@ -68,7 +86,6 @@
       "preco": 30,
       "url": "../../../assets/img/burguerproduct.png"
     },
-
     {
       "grif": "La Vosier",
       "categoria": "Promoções",
@@ -77,7 +94,6 @@
       "preco": 30,
       "url": "../../../assets/img/burguerproduct.png"
     },
-
     {
       "grif": "La Vosier",
       "categoria": "Bebidas",
@@ -86,7 +102,6 @@
       "preco": 20,
       "url": "../../../assets/img/cubanaca.png"
     },
-
     {
       "grif": "Carolina Herrera",
       "categoria": "Bebidas",
@@ -95,7 +110,6 @@
       "preco": 20,
       "url": "../../../assets/img/carolina.png"
     },
-
     {
       "grif": "Casa do cafe",
       "categoria": "Bebidas",
@@ -104,7 +118,6 @@
       "preco": 20,
       "url": "../../../assets/img/casacafe.png"
     },
-
     {
       "grif": "Doces Supremos",
       "categoria": "Bebidas",
@@ -113,7 +126,6 @@
       "preco": 25,
       "url": "../../../assets/img/milkshake.png"
     },
-
     {
       "grif": "Body Fitness",
       "categoria": "Bebidas",
@@ -122,7 +134,6 @@
       "preco": 20,
       "url": "../../../assets/img/melancia.png"
     },
-
     {
       "grif": "Body Fitness",
       "categoria": "Bebidas",
@@ -131,7 +142,6 @@
       "preco": 20,
       "url": "../../../assets/img/agua.png"
     },
-
     {
       "grif": "La Vosier",
       "categoria": "Lanches",
@@ -140,7 +150,6 @@
       "preco": 16,
       "url": "../../../assets/img/lanchecuba.png"
     },
-
     {
       "grif": "Casa da Batata",
       "categoria": "Lanches",
@@ -149,7 +158,6 @@
       "preco": 26,
       "url": "../../../assets/img/superkit.png"
     },
-
     {
       "grif": "Via Expresso",
       "categoria": "Lanches",
@@ -158,7 +166,6 @@
       "preco": 46,
       "url": "../../../assets/img/milenium.png"
     },
-
     {
       "grif": "Lanches artesanais",
       "categoria": "Lanches",
@@ -167,7 +174,6 @@
       "preco": 29,
       "url": "../../../assets/img/innature.png"
     },
-
     {
       "grif": "Cubanacan",
       "categoria": "Lanches",
@@ -176,7 +182,6 @@
       "preco": 26,
       "url": "../../../assets/img/natchos.png"
     },
-
     {
       "grif": "Mama mia",
       "categoria": "Lanches",
@@ -185,7 +190,6 @@
       "preco": 46,
       "url": "../../../assets/img/quarteirao.png"
     },
-
     {
       "grif": "Latinos Lanches",
       "categoria": "Lanches",
@@ -194,7 +198,6 @@
       "preco": 16,
       "url": "../../../assets/img/presuntinhos.png"
     },
-
     {
       "grif": "Casa da Batata",
       "categoria": "Lanches",
@@ -203,7 +206,6 @@
       "preco": 26,
       "url": "../../../assets/img/superkit2.png"
     },
-
     {
       "grif": "Via expresso",
       "categoria": "Lanches",
@@ -212,7 +214,6 @@
       "preco": 26,
       "url": "../../../assets/img/milenium2.png"
     },
-
     {
       "grif": "Siga bem caminhoneiro",
       "categoria": "Lanches",
@@ -221,7 +222,6 @@
       "preco": 26,
       "url": "../../../assets/img/enguica.png"
     },
-
     {
       "grif": "Vida Saudavel",
       "categoria": "Lanches",
@@ -230,7 +230,6 @@
       "preco": 14,
       "url": "../../../assets/img/paulista.png"
     },
-
     {
       "grif": "Pão de queijo",
       "categoria": "Lanches",
