@@ -1,0 +1,197 @@
+.cart{
+
+.cart--title{
+    width: 100%;
+    height: 75px;
+    color: #E32C2C;
+    font-size: 64px;
+    margin-top: 107px;
+    margin-right: 135px;
+}
+
+.cart--box{
+    width: 1169px;
+    height: 225px;
+    background: red;
+    margin-top:35px;
+    margin-left: 136px;
+    display: flex;
+    flex-direction: row;
+
+    .box--img{
+    width: 302px;
+    height: 225px;
+    background:black;
+    
+    }
+
+    .box--info{
+    width: 447px;
+    height: 225px;
+    background:rgb(167, 226, 30);
+
+        .info--title{
+            width:295px;
+            height: 28px;
+            margin-left: 20px;
+            margin-top:20px;
+            margin-bottom:15px;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 28px;
+
+            color: #525252;
+
+        }
+
+        .info--product{
+            width:295px;
+            height: 28px;
+            margin-top:15px;
+            margin-left: 20px;
+            margin-bottom:22px;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 28px;
+
+            color: #525252;
+        }
+
+        .info--price{
+            width:120px;
+            height: 28px;
+            margin-top:22px;
+            margin-bottom:84px;
+            margin-left: 20px;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 28px;
+
+            color: #E32C2C;
+        }
+    }
+
+    .box--amount{
+        width: 447px;
+        height: 225px;
+        background:rgb(135, 141, 121);
+        display: flex;
+        flex-direction: row;
+
+        .amount--btn--decrement{
+            width:72px;
+            height: 61px;
+            margin-top:151px;
+            margin-left:50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            justify-self: center;
+            outline: gba(0, 0, 0, 0.1);
+
+
+            .btn--text{
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 56px;
+            line-height: 66px;
+            text-align: center;
+
+
+            color: #574E4E;
+            }           
+        }
+
+        .amount--input{
+            width:72px;
+            height: 61px;
+            margin-top:151px;
+
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 28px;
+            line-height: 33px;
+            text-align: center;
+            outline: gba(0, 0, 0, 0.1);
+
+            color: #574E4E;
+            }
+
+
+        .amount--input--value{
+            width:141px;
+            height: 61px;
+            margin-top:151px;
+
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 28px;
+
+            color: #E32C2C;
+            }
+
+            .amount--btn--increment{
+                width:72px;
+                height: 61px;
+                margin-top:151px;
+                display: flex;
+                outline: gba(0, 0, 0, 0.1);
+
+    
+                .btn--text{
+                    width: 27px;
+                    height: 100%;
+                    margin-left: 15px;
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 46px;
+                    line-height: 66px;
+                    color: #574E4E;
+                    
+                    margin-top: 0px;
+                    display: flex;
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+                }
+            
+                
+            }      
+            .amount--value{
+                width:141px;
+                height: 60px;
+                margin-top:151px;
+                background-color: #ffff;
+                display: flex;
+                outline: gba(0, 0, 0, 0.1);
+
+
+                .value--text{
+                margin: auto;
+                
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 24px;
+                line-height: 28px;
+
+                color: #E32C2C;
+                }
+            }     
+    }
+}
+
+}
+
+
