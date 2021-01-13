@@ -25,6 +25,7 @@ import { AuthService } from './pages/login/auth.service';
 import { RegisterComponent } from './pages/register/register.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
+import { CartComponent } from './pages/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { HttpClientModule } from '@angular/common/http';
     SnackListComponent,
     LoginComponent,
     RegisterComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
