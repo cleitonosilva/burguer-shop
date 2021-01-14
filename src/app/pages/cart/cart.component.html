@@ -16,15 +16,27 @@
         </div>
 
         <div class="box--amount">
-            <button class="amount--btn--decrement "> - </button>
-            <input class="amount--input">
-            <button class="amount--btn--increment"> <p >+</p> </button>
-            <div class="amount--value"> <p class="value--text">R$ 16,00</p> </div>
-
+            <button class="amount--btn--decrement" (click)="decrement()"> - </button>
+            <input class="amount--input" [value]="valor" readonly>
+            <button class="amount--btn--increment" (click)="increment()"> <p >+</p> </button>
+            <div class="amount--value"> <p class="value--text">{{valorTotal | currency:'R$ '}}</p> </div>
         </div>
-
-
     </div>
+    
+
+    <div class="cart--box">
+       <div class="wrapper--resume"> 
+        <div class="box--resume">
+            <p>Nº de itens</p>
+            <p class="resume--price">{{valor}}</p>
+        </div>
+        <div class="box--resume">
+           <p>Total:</p> <p class="resume--value"> {{valorTotal | currency:'R$ '}} </p>
+        </div>
+        <button class="resume--trade">Finalizar Agora</button>
+       </div>
+    </div>
+
 </section>
 
 <app-footer></app-footer>
