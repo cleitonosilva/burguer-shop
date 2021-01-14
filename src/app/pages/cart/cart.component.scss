@@ -94,19 +94,16 @@
             justify-content: center;
             justify-self: center;
             outline: gba(0, 0, 0, 0.1);
-
-
-            .btn--text{
+            
             font-family: Roboto;
             font-style: normal;
             font-weight: bold;
-            font-size: 56px;
-            line-height: 66px;
+            font-size: 52px;
+            line-height: 100%;
             text-align: center;
 
-
             color: #574E4E;
-            }           
+                     
         }
 
         .amount--input{
@@ -139,34 +136,39 @@
 
             color: #E32C2C;
             }
-
+           
             .amount--btn--increment{
+
                 width:72px;
                 height: 61px;
                 margin-top:151px;
-                display: flex;
+                align-items: center;
+                justify-content: center;
+                justify-self: center;
                 outline: gba(0, 0, 0, 0.1);
-
-    
-                .btn--text{
-                    width: 27px;
-                    height: 100%;
-                    margin-left: 15px;
-                    font-family: Roboto;
-                    font-style: normal;
-                    font-weight: bold;
-                    font-size: 46px;
-                    line-height: 66px;
-                    color: #574E4E;
-                    
-                    margin-top: 0px;
-                    display: flex;
-                    text-align: center;
-                    justify-content: center;
-                    align-items: center;
-                }
-            
                 
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 52px;
+                line-height: 100%;
+                text-align: center;
+    
+                color: #574E4E;
+
+                // width:72px;
+                // height: 61px;
+                // margin-top:151px;
+                // display: flex;
+                // outline: gba(0, 0, 0, 0.1);
+
+                // margin-left: 15px;
+                //     font-family: Roboto;
+                //     font-style: normal;
+                //     font-weight: bold;
+                //     font-size: 46px;
+                //     line-height: 66px;
+                //     color: #574E4E;
             }      
             .amount--value{
                 width:141px;
