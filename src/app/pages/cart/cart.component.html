@@ -6,7 +6,7 @@
     <div class="cart--box" *ngFor="let item of produtosVindoDaPagina">
         
         <div class="box--img">
-            <img [src]="item.url" alt="">
+            <img class="img--produtc" [src]="item.url" alt="">
         </div>
         
         <div class="box--info">
@@ -17,23 +17,22 @@
 
         <div class="box--amount">
             <button class="amount--btn--decrement" (click)="decrement(item)"> - </button>
-            <input class="amount--input" [value]="item.quantidade" readonly>
-            <button class="amount--btn--increment" (click)="increment(item)"> <p>+</p> </button>
+            <input class="amount--input"  [(ngModel)]="item.quantidade" readonly>
+            <button class="amount--btn--increment" (click)="increment(item)"> <p> + </p> </button>
             <div class="amount--value"> <p class="value--text">{{item.valorTotal | currency:'R$ '}}</p> </div>
         </div>
     </div>
-    
 
-    <div class="cart--box" >
+    <div class="wrapper--box" >
        <div class="wrapper--resume"> 
         <div class="box--resume">
             <p>Nº de itens</p>
-            <p class="resume--price">{{quantidadeInicial}}</p>
+            <p class="resume--price">{{itemQuantidade}}</p>
         </div>
         <div class="box--resume" >
-           <p>Total:</p> <p class="resume--value"> {{valorTotal }} </p>
+           <p>Total:</p> <p class="resume--value">{{valorTotal | currency:'R$ '}} </p>
         </div>
-        <button class="resume--trade">Finalizar Agora</button>
+        <button class="resume--trade" (click)="finishCar()" >Finalizar Agora</button>
        </div>
     </div>
 
