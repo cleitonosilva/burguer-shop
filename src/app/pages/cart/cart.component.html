@@ -3,35 +3,35 @@
 <section class="cart">
     <h2 class="cart--title">Finalizar seu pedido</h2>
 
-    <div class="cart--box">
+    <div class="cart--box" *ngFor="let item of produtosVindoDaPagina">
         
         <div class="box--img">
-        <!-- img  -->
+            <img [src]="item.url" alt="">
         </div>
         
         <div class="box--info">
-        <p class="info--title"> Agua levemente adocicada </p>
-        <p class="info--product">Via Expresso</p>
-        <p class="info--price">R$: 8,00</p>
+        <p class="info--title"> {{item.produto}} </p>
+        <p class="info--product">{{item.grif}}</p>
+        <p class="info--price" id="price" >{{item.preco | currency:'R$ ' }}</p>
         </div>
 
         <div class="box--amount">
-            <button class="amount--btn--decrement" (click)="decrement()"> - </button>
-            <input class="amount--input" [value]="valor" readonly>
-            <button class="amount--btn--increment" (click)="increment()"> <p >+</p> </button>
-            <div class="amount--value"> <p class="value--text">{{valorTotal | currency:'R$ '}}</p> </div>
+            <button class="amount--btn--decrement" (click)="decrement(item)"> - </button>
+            <input class="amount--input" [value]="item.quantidade" readonly>
+            <button class="amount--btn--increment" (click)="increment(item)"> <p>+</p> </button>
+            <div class="amount--value"> <p class="value--text">{{item.valorTotal | currency:'R$ '}}</p> </div>
         </div>
     </div>
     
 
-    <div class="cart--box">
+    <div class="cart--box" >
        <div class="wrapper--resume"> 
         <div class="box--resume">
             <p>Nº de itens</p>
-            <p class="resume--price">{{valor}}</p>
+            <p class="resume--price">{{quantidadeInicial}}</p>
         </div>
-        <div class="box--resume">
-           <p>Total:</p> <p class="resume--value"> {{valorTotal | currency:'R$ '}} </p>
+        <div class="box--resume" >
+           <p>Total:</p> <p class="resume--value"> {{valorTotal }} </p>
         </div>
         <button class="resume--trade">Finalizar Agora</button>
        </div>

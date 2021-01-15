@@ -9,7 +9,7 @@
               <b class="card--title">{{p.grif}} </b>
               <b class="card--type">{{p.categoria}} </b>
             </div>
-              <h4 class="card--product">{{p.produto}}</h4>
+              <h4 class="card--product" >{{p.produto}}</h4>
             <div class="card--description">
               <p>{{p.descricao}}</p>
             </div>  
@@ -19,7 +19,8 @@
                     <p class="price--info">{{p.preco | currency:'R$'}}</p>
                 </div>
                 <div class="cart--purchase">
-                    <button class="cart--btn">Adicionar</button>
+                    <button class="cart--btn" [value]="p.produto"
+                    (click)="ProdutoSelecionado($event.target)" (click)="Adicionar()">Adicionar</button>
                 </div>
             </div>
         </div>

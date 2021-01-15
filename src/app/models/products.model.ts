@@ -5,4 +5,7 @@ export class Produto {
     descricao: string;
     preco: number;
     url: string;
+    id: number;
+    quantidade: number;
+    valorTotal: number;
 }

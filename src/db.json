@@ -46,60 +46,7 @@
     }
   ],
   "produtos": [
-    {
-      "grif": "La Vosier",
-      "categoria": "Promoções",
-      "produto": "Hamburguer",
-      "descricao": "Delicia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-      "preco": 20,
-      "url": "../../../assets/img/burguerproduct.png",
-      "id": 1
-    },
-    {
-      "grif": "La Vosier",
-      "categoria": "Promoções",
-      "produto": "Hamburguer",
-      "descricao": "Delicia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-      "preco": 25,
-      "url": "../../../assets/img/burguerproduct.png",
-      "id": 2
-    },
-    {
-      "grif": "La Vosier",
-      "categoria": "Promoções",
-      "produto": "Hamburguer",
-      "descricao": "Delicia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-      "preco": 30,
-      "url": "../../../assets/img/burguerproduct.png",
-      "id": 3
-    },
-    {
-      "grif": "La Vosier",
-      "categoria": "Promoções",
-      "produto": "Hamburguer",
-      "descricao": "Delicia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-      "preco": 30,
-      "url": "../../../assets/img/burguerproduct.png",
-      "id": 4
-    },
-    {
-      "grif": "La Vosier",
-      "categoria": "Promoções",
-      "produto": "Hamburguer",
-      "descricao": "Delicia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-      "preco": 30,
-      "url": "../../../assets/img/burguerproduct.png",
-      "id": 5
-    },
-    {
-      "grif": "La Vosier",
-      "categoria": "Promoções",
-      "produto": "Hamburguer",
-      "descricao": "Delicia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-      "preco": 30,
-      "url": "../../../assets/img/burguerproduct.png",
-      "id": 6
-    },
+    
     {
       "grif": "La Vosier",
       "categoria": "Bebidas",
