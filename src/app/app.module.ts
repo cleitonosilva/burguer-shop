@@ -26,6 +26,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { CartComponent } from './pages/cart/cart.component';
+import { AuthGuards } from './guards/auth-guards';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,7 @@ import { CartComponent } from './pages/cart/cart.component';
     HttpClientModule,
     
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuards],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
