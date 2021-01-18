@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 
@@ -10,18 +10,24 @@ export class AuthService {
 private userAuth: boolean = false;
 
 
+
+
   constructor(private router: Router) { }
 
   fazerLogin(usuario: User){
-    if ( usuario.email === 'usuario@email.com' &&
+    if ( usuario.email === 'com' &&
          usuario.senha === '123456'
     ) {
         this.userAuth = true;
-        this.router.navigate(['/']);
-    } else (
-        this.userAuth = false
+        this.router.navigate(['/carrinho']);
+      } else (
+      this.userAuth = false
     )
-
   }
+
+  usuarioEstaAutenticado(){
+    return this.userAuth;
+  }
+
 
 }
