@@ -43,6 +43,15 @@
       "senha": "4545",
       "confirmarSenha": "4545",
       "id": 3
+    },
+    {
+      "email": "admin@admin.com",
+      "endereco": "rua do admin",
+      "telefone": "2196000000",
+      "pontoReferencia": "rua do admin ",
+      "senha": "123456",
+      "confirmarSenha": "123456",
+      "id": 4
     }
   ],
   "produtos": [

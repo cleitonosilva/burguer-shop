@@ -21,4 +21,9 @@ createUser(register: Register) {
 //  const id = this.userLength() 
  return this.http.post(this.url, register)
 }
+
+getUser(): Observable<Register[]> {
+  return this.http.get<Register[]>(this.url); 
+}
+
 }
