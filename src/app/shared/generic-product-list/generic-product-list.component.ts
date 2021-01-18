@@ -29,7 +29,6 @@ export class GenericProductListComponent implements OnInit {
       this.produtoSelecionado = list
     }
 
-    console.log(this.produtoSelecionado)
   }
   
   
