@@ -27,6 +27,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { CartComponent } from './pages/cart/cart.component';
 import { AuthGuards } from './guards/auth-guards';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { AuthGuards } from './guards/auth-guards';
     LoginComponent,
     RegisterComponent,
     CartComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -57,6 +59,12 @@ import { AuthGuards } from './guards/auth-guards';
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+    positionClass: 'toast-bottom-right',
+    progressBar: true
+}),
+    
     
   ],
   providers: [AuthService, AuthGuards],
