@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Produto } from 'src/app/models/products.model';
 import { ProdutosService } from 'src/app/services/produtos.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Item } from 'src/app/models/item';
 
 @Component({
   selector: 'app-cart',
@@ -16,6 +17,7 @@ export class CartComponent implements OnInit {
   totalItens: number =1
   itemQuantidade: number = 0
   valorTotal: number = 0
+  item: Item []
 
   constructor(public produtosService: ProdutosService, private router: Router) { }
 
@@ -25,8 +27,13 @@ export class CartComponent implements OnInit {
     const storageValue = JSON.parse(String(localStorage.getItem('cart')));
     this.produtosVindoDaPagina = storageValue;
 
+
+    const storageValueItem = JSON.parse(String(localStorage.getItem('item')));
+    this.item = storageValueItem;
+
     // acrescenta a quantidade inicial vindo da pagina como 1 e o valor total com o preço do seu respectivo item  
-    this.produtosVindoDaPagina = this.produtosVindoDaPagina.map( x => ({...x, quantidade: 1, valorTotal: x.preco}))
+    if(this.produtosVindoDaPagina){
+    this.produtosVindoDaPagina = this.produtosVindoDaPagina.map( x => ({...x, quantidade: 1, valorTotal: x.preco}))}
 
     // deixa disponiveis todos os produtos do banco 
     this.produtosService.getProdutos().subscribe(x =>{
@@ -34,11 +41,15 @@ export class CartComponent implements OnInit {
     })
 
     // Recebe o valor incial de produtos tendo em vista que cada produto inicia com 1 acrescido acima ou seja é o mesmo tamanho do lenght []
+    if(this.produtosVindoDaPagina){
     this.itemQuantidade = this.produtosVindoDaPagina.length
+    }
 
     // Ele percorre com for e soma os valores de valortotal para incrementar o valor inicial
-    for(let i of this.produtosVindoDaPagina){
-      this.valorTotal += i.valorTotal
+    if(this.produtosVindoDaPagina){
+      for(let i of this.produtosVindoDaPagina){
+        this.valorTotal += i.valorTotal
+      }
     }
   }
 
@@ -55,6 +66,7 @@ export class CartComponent implements OnInit {
 
         // diminui o valor do produto no preço total do carrinho
         this.valorTotal -= item.preco
+
       }
 
       // atualiza o valor total do produto unitário com base na quantidade passada pelo decrement ou increment
@@ -77,8 +89,13 @@ export class CartComponent implements OnInit {
 
     finishCar(){
       localStorage.clear();
+      window.location.reload()
       this.router.navigate([''])
     }
+
+    // totalItensMenu(total : number){
+      
+    // }
 }
 
 

@@ -15,10 +15,14 @@ export class AuthService {
 private userAuth: boolean = false;
 register: Register[] = []
 registerSelect: any
+registerLog: any
 
 
 
-  constructor(private router: Router, private registerService: RegisterService, private toastr: ToastrService) { }
+  constructor(
+    private router: Router,
+    private registerService: RegisterService,
+    private toastr: ToastrService) { }
 
   fazerLogin(usuario: User){
 
@@ -30,10 +34,24 @@ registerSelect: any
     if ( usuario.email == String(useremail?.email) &&
          usuario.senha == String(useremail?.senha)
     ) {
+        this.registerLog = useremail
+        const userLog = localStorage['userLog'] ? JSON.parse(localStorage['userLog']) : [];
+    
+        userLog.push({
+          id: useremail?.id,
+          email: useremail?.email,
+          endereco: useremail?.endereco,
+          telefone: useremail?.telefone,
+          pontoReferencia: useremail?.pontoReferencia,
+          nome: useremail?.nome,
+          sobrenome: useremail?.sobrenome,
+        });
+  
+        localStorage.setItem('userLog', JSON.stringify(userLog));
+
         this.userAuth = true;
         this.showSuccess("login efetuado com sucesso")
         this.router.navigate(['/carrinho']);
-        
     }
     
     else if (  usuario.email == String(useremail?.email) &&
@@ -65,6 +83,7 @@ registerSelect: any
   usuarioEstaAutenticado(){
     return this.userAuth;
   }
+
 
   showSuccess(msg: string) {
     this.toastr.success(msg);
