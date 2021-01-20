@@ -1,6 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { BehaviorSubject } from 'rxjs';
+import { Item } from 'src/app/models/item';
 import { ProdutosService } from 'src/app/services/produtos.service';
 import {Produto} from '../../models/products.model'
+import { GenericModalComponent } from '../generic-modal/generic-modal.component';
 
 
 @Component({
@@ -13,13 +17,18 @@ export class GenericProductListComponent implements OnInit {
 
   produtoSelecionado: Produto;
   listaDeProdutos : Produto [] = []
+  produtosVindoDaPagina: Produto[]
+  item: any
+  // produtosVindoDaPagina: Produto [];
 
-  constructor(public produtosService : ProdutosService) { }
+  constructor(public produtosService : ProdutosService, private modalService: NgbModal) { }
 
   
   ngOnInit(): void {
     this.produtosService.getProdutos().subscribe(x  => {
     this.listaDeProdutos = x})
+
+
   }
   
   ProdutoSelecionado(produto: any){
@@ -30,7 +39,6 @@ export class GenericProductListComponent implements OnInit {
     }
 
   }
-  
   
   Adicionar(){
     
@@ -46,8 +54,36 @@ export class GenericProductListComponent implements OnInit {
         grif: this.produtoSelecionado.grif
       });
       
+      this.open()
+
+
       localStorage.setItem('cart', JSON.stringify(cart));
+      // window.location.reload();
+
+      // const storageValue = JSON.parse(String(localStorage.getItem('cart')));
+      // this.produtosVindoDaPagina = storageValue;
+
+      // const item = localStorage['item'] ? JSON.parse(localStorage['item']) : [];
+      // this.item = item;
+      // item.push({
+      //   item: this.produtoSelecionado.produto
+      // })
+
+      // localStorage.setItem('item', JSON.stringify(item));
+
+      // const storageValueItem = JSON.parse(String(localStorage.getItem('item')));
+      // this.item = storageValueItem;
+      
+      // this.produtosService.changeItem(this.item.value)
+
   }
+
+  open() {
+
+    const modalRef = this.modalService.open(GenericModalComponent);
+    modalRef.componentInstance.name = 'aqui';
+  }
+
 }
 
 
