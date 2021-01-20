@@ -53,6 +53,11 @@ $ npm install
 
 $ ng serve 
 
+# abra um outro terminal para subir o banco
+
+$ json-server --watch db.json
+
+
 ```
 
 
