@@ -7,7 +7,18 @@
           <div class="register--wrapper">
             
             <form [formGroup]="formRegister" (ngSubmit)="fazerCadastro()">
-                              
+                          
+              
+                <div>
+                  <label for="telefone">Nome: </label>
+                  <input type="text" formControlName="nome" class="form-control">
+                </div>
+
+                <div>
+                  <label for="telefone">SobreNome: </label>
+                  <input type="text" formControlName="sobrenome" class="form-control">
+                </div>
+
                 <div>
                   <label for="email">E-mail: </label>
                   <input type="text" class="form-control" formControlName="email">

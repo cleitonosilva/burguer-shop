@@ -50,6 +50,8 @@ export class RegisterComponent implements OnInit {
       pontoReferencia: ['', Validators.required],
       senha: ['', Validators.required],
       confirmarSenha: ['',Validators.required],
+      nome: ['', Validators.required],
+      sobrenome: ['', Validators.required]
     })
   };
   
