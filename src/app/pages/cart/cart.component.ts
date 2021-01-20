@@ -28,8 +28,8 @@ export class CartComponent implements OnInit {
     this.produtosVindoDaPagina = storageValue;
 
 
-    const storageValueItem = JSON.parse(String(localStorage.getItem('item')));
-    this.item = storageValueItem;
+    // const storageValueItem = JSON.parse(String(localStorage.getItem('item')));
+    // this.item = storageValueItem;
 
     // acrescenta a quantidade inicial vindo da pagina como 1 e o valor total com o preço do seu respectivo item  
     if(this.produtosVindoDaPagina){

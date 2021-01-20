@@ -42,6 +42,16 @@ export class GenericProductListComponent implements OnInit {
   
   Adicionar(){
     
+    const storageValue = JSON.parse(String(localStorage.getItem('cart')));
+    this.produtosVindoDaPagina = storageValue;
+
+    const lista = this.produtosVindoDaPagina.find(x => (x.id == this.produtoSelecionado.id))
+    console.log(lista)
+
+    if (lista?.id == this.produtoSelecionado.id){
+      console.log("produto já adicionado")
+    } else {
+
       const cart = localStorage['cart'] ? JSON.parse(localStorage['cart']) : [];
     
       cart.push({
@@ -55,7 +65,6 @@ export class GenericProductListComponent implements OnInit {
       });
       
       this.open()
-
 
       localStorage.setItem('cart', JSON.stringify(cart));
       // window.location.reload();
@@ -76,6 +85,7 @@ export class GenericProductListComponent implements OnInit {
       
       // this.produtosService.changeItem(this.item.value)
 
+    }
   }
 
   open() {
