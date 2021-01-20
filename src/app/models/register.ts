@@ -5,5 +5,7 @@ export class Register {
     endereco: string;
     telefone: string;
     pontoReferencia: string;
-    confirmarSenha: string
+    confirmarSenha: string;
+    sobrenome: string;
+    nome: string;
   }
