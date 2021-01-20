@@ -28,6 +28,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { CartComponent } from './pages/cart/cart.component';
 import { AuthGuards } from './guards/auth-guards';
 import { ToastrModule } from 'ngx-toastr';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { GenericModalComponent } from './shared/generic-modal/generic-modal.component';
+import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -45,6 +48,8 @@ import { ToastrModule } from 'ngx-toastr';
     LoginComponent,
     RegisterComponent,
     CartComponent,
+    GenericModalComponent,
+    
     
   ],
   imports: [
@@ -59,13 +64,16 @@ import { ToastrModule } from 'ngx-toastr';
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgbPaginationModule,
+    NgbAlertModule,
     ToastrModule.forRoot({
       timeOut: 10000,
     positionClass: 'toast-bottom-right',
     progressBar: true
 }),
-    
-    
+
+    NgbModule,
+     
   ],
   providers: [AuthService, AuthGuards],
   bootstrap: [AppComponent]
