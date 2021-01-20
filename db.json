@@ -24,7 +24,9 @@
       "telefone": "21964099980",
       "pontoReferencia": "4141",
       "senha": "414141",
-      "confirmarSenha": "414141"
+      "confirmarSenha": "414141",
+      "nome": "Cleiton",
+      "sobrenome": "dev"
     },
     {
       "email": "falatom@gmail.com",
@@ -33,6 +35,8 @@
       "pontoReferencia": "110",
       "senha": "1104",
       "confirmarSenha": "1104",
+      "nome": "Claudio",
+      "sobrenome": "Oliveira",
       "id": 2
     },
     {
@@ -42,6 +46,8 @@
       "pontoReferencia": "45411",
       "senha": "4545",
       "confirmarSenha": "4545",
+      "nome": "Beto",
+      "sobrenome": "Cinto",
       "id": 3
     },
     {
@@ -51,7 +57,20 @@
       "pontoReferencia": "rua do admin ",
       "senha": "123456",
       "confirmarSenha": "123456",
+      "nome": "Jefer",
+      "sobrenome": "Julios",
       "id": 4
+    },
+    {
+      "email": "eu",
+      "endereco": "eu",
+      "telefone": "2155222",
+      "pontoReferencia": "21",
+      "senha": "123",
+      "confirmarSenha": "123",
+      "nome": "Maria",
+      "sobrenome": "Oliveira",
+      "id": 5
     }
   ],
   "produtos": [
