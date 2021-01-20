@@ -29,7 +29,7 @@ O projeto foi desenvolvido com as seguintes tecnologias:
 
 O desenvolvimento desse projeto, está contando com o uso de ferramentas de serviços, guardas de rotas, input e output, continuação de dados e banco de dados, como filosofia de arquitetura Css utilizei o metódo BEM - Bloco (Block), Elemento (Element) e Modificador (Modifier) deixando a aplicação otimizada para as manutenções e mantendo um código limpo e organizado. 
 
-    Com as validações em funcionamento e as regras de negócio aplicadas, o úsuario deve fazer login na plataforma para acessar o seu carrinho de compras, caso não tenha login o usúario consegue se cadastrar e seguir com o pedido, os produtos estão divididos por categorias e somente no carrinho é possível alterar as suas quantidades. 
+Com as validações em funcionamento e as regras de negócio aplicadas, o úsuario deve fazer login na plataforma para acessar o seu carrinho de compras, caso não tenha login o usúario consegue se cadastrar e seguir com o pedido, os produtos estão divididos por categorias e somente no carrinho é possível alterar as suas quantidades. 
 
 O projeto mesmo sendo para estudo e portifólio, ainda está em desenvolvimento! então algumas de suas funcionalidades como por exemplo retirar o item do carrinho ainda será aplicada. 
 
