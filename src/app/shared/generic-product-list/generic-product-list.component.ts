@@ -16,7 +16,6 @@ import { GenericModalComponent } from '../generic-modal/generic-modal.component'
     <h4  class="modal-title"> Olá visitante, faça <a class="modal-title" href="/login">Login</a> ou <a class="modal-title" href="/cadastro">Cadastre-se</a> </h4>
   </div> -->
   
-
   
 
   <div  class="modal-header" style="background: #E32C2C; color: #FFFFFF" >
@@ -89,16 +88,10 @@ export class GenericProductListComponent implements OnInit {
   }
   
   Adicionar(){
-    
     const storageValue = JSON.parse(String(localStorage.getItem('cart')));
     this.produtosVindoDaPagina = storageValue;
 
-    const lista = this.produtosVindoDaPagina.find(x => (x.id == this.produtoSelecionado.id))
-    
-
-    if (lista?.id == this.produtoSelecionado.id){
-      this.openMOdal()
-    } else {
+    if(!this.produtosVindoDaPagina){
 
       const cart = localStorage['cart'] ? JSON.parse(localStorage['cart']) : [];
     
@@ -115,27 +108,39 @@ export class GenericProductListComponent implements OnInit {
       this.open()
 
       localStorage.setItem('cart', JSON.stringify(cart));
-      // window.location.reload();
+    }
+  else {
+    const storageValue = JSON.parse(String(localStorage.getItem('cart')));
+    this.produtosVindoDaPagina = storageValue;
+  
+    const lista = this.produtosVindoDaPagina.find(x => (x.id == this.produtoSelecionado.id))
 
-      // const storageValue = JSON.parse(String(localStorage.getItem('cart')));
-      // this.produtosVindoDaPagina = storageValue;
+    if(lista?.id == this.produtoSelecionado.id){
+      this.openMOdal()
+    } 
+    else {
 
-      // const item = localStorage['item'] ? JSON.parse(localStorage['item']) : [];
-      // this.item = item;
-      // item.push({
-      //   item: this.produtoSelecionado.produto
-      // })
-
-      // localStorage.setItem('item', JSON.stringify(item));
-
-      // const storageValueItem = JSON.parse(String(localStorage.getItem('item')));
-      // this.item = storageValueItem;
+      const cart = localStorage['cart'] ? JSON.parse(localStorage['cart']) : [];
+    
+      cart.push({
+        produto: this.produtoSelecionado.produto,
+        id: this.produtoSelecionado.id,
+        preco: this.produtoSelecionado.preco,
+        url: this.produtoSelecionado.url,
+        categoria: this.produtoSelecionado.categoria,
+        descricao: this.produtoSelecionado.descricao,
+        grif: this.produtoSelecionado.grif
+      });
       
-      // this.produtosService.changeItem(this.item.value)
+      this.open()
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+
 
     }
   }
-
+}
+ 
   open() {
 
     const modalRef = this.modalService.open(GenericModalComponent);
