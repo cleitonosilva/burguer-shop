@@ -1,27 +1,65 @@
-# Burguer
+<h1 align="center">
+        Burguer Shop. 
+</h1>
+<h1>
+    <img src="src\assets\img\burguerReadme.png">
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
+</h1>
 
-## Development server
+# Sobre
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+O projeto **Burguer Shop** é uma aplicação de pedidos de comida on-line, onde usuários podem se cadastrar e solictar o seu prato favorito. 
+O **Burguer Shop** é um projeto criado para estudo e aplicação de conhecimentos da área, visando a busca pela excelência e o conhecimento.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Fonte 
 
-## Build
+O projeto foi desenhado por Robson Maia https://github.com/robsonmvieira em um exercício de melhoria de criação em Ui e UX. Com base em seu desenho fui desenvolvendo a aplicação e estipulando algumas regras de negócio. 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+# Tecnologias utilizadas
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+O projeto foi desenvolvido com as seguintes tecnologias:
+- Angular 
+- Bootstrap
+- Ngx Bootstrap 
+- Db Json 
 
-## Running end-to-end tests
+# Resumo 
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+O desenvolvimento desse projeto, está contando com o uso de ferramentas de serviços, guardas de rotas, input e output, continuação de dados e banco de dados, como filosofia de arquitetura Css utilizei o metódo BEM - Bloco (Block), Elemento (Element) e Modificador (Modifier) deixando a aplicação otimizada para as manutenções e mantendo um código limpo e organizado. 
 
-## Further help
+    Com as validações em funcionamento e as regras de negócio aplicadas, o úsuario deve fazer login na plataforma para acessar o seu carrinho de compras, caso não tenha login o usúario consegue se cadastrar e seguir com o pedido, os produtos estão divididos por categorias e somente no carrinho é possível alterar as suas quantidades. 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+O projeto mesmo sendo para estudo e portifólio, ainda está em desenvolvimento! então algumas de suas funcionalidades como por exemplo retirar o item do carrinho ainda será aplicada. 
+
+
+
+# Como baixar o projeto 
+
+```bash
+
+# clonar o repositório 
+$ https://github.com/cleitonosilva/burguer-shop
+
+# entrar no diretório 
+
+$ cd burguer
+
+# instalar as dependências 
+
+$ npm install 
+
+# iniciar o projeto
+
+$ ng serve 
+
+```
+
+
+# Contato
+Desenvolvido por Cleiton Oliveira
+- telefone: 21 - 964099980
+- emails: cleiton.o.dev@gmail.com / cleiton.logistica@outlook.com
+- LinkedIn: https://www.linkedin.com/in/cleiton-silva-8637b983/
+
