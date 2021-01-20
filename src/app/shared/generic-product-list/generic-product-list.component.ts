@@ -1,10 +1,49 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BehaviorSubject } from 'rxjs';
 import { Item } from 'src/app/models/item';
+import { Register } from 'src/app/models/register';
 import { ProdutosService } from 'src/app/services/produtos.service';
 import {Produto} from '../../models/products.model'
 import { GenericModalComponent } from '../generic-modal/generic-modal.component';
+
+@Component({
+  selector: 'ngbd-modal-content',
+  template: `
+   
+   
+   <!-- <div class="modal-header" style="background: #E32C2C; color: #FFFFFF" >
+    <h4  class="modal-title"> Olá visitante, faça <a class="modal-title" href="/login">Login</a> ou <a class="modal-title" href="/cadastro">Cadastre-se</a> </h4>
+  </div> -->
+  
+
+  
+
+  <div  class="modal-header" style="background: #E32C2C; color: #FFFFFF" >
+    <h4  class="modal-title"> Olá visitante, faça <a class="modal-title" href="/login">Login</a> ou <a class="modal-title" href="/cadastro">Cadastre-se</a> </h4>
+  </div>
+
+ 
+  <div class="modal-body d-flex" >
+   <h4>Produto já adicionado!<br> Altere as quantidades de cada item <br> direto no <a class="modal-title" href="/carrinho">Carrinho</a> .</h4>
+  </div>  
+
+
+<div class="modal--itens">
+  
+</div>
+
+  `
+})
+export class ModalMsg {
+  @Input() controle : boolean;
+
+  constructor(public activeModal: NgbActiveModal) {}
+}
+
+
+// ---------------------------------modal Acima ----------------------------------
+
 
 
 @Component({
@@ -14,6 +53,8 @@ import { GenericModalComponent } from '../generic-modal/generic-modal.component'
 })
 export class GenericProductListComponent implements OnInit {
   @Input() produtos: Produto[];
+  userLog: Register[];
+  controle: boolean = false
 
   produtoSelecionado: Produto;
   listaDeProdutos : Produto [] = []
@@ -28,6 +69,13 @@ export class GenericProductListComponent implements OnInit {
     this.produtosService.getProdutos().subscribe(x  => {
     this.listaDeProdutos = x})
 
+
+    const storageValueLog = JSON.parse(String(localStorage.getItem('userLog')));
+      this.userLog = storageValueLog;
+
+      if(this.userLog){
+        this.controle = true
+      }
 
   }
   
@@ -46,10 +94,10 @@ export class GenericProductListComponent implements OnInit {
     this.produtosVindoDaPagina = storageValue;
 
     const lista = this.produtosVindoDaPagina.find(x => (x.id == this.produtoSelecionado.id))
-    console.log(lista)
+    
 
     if (lista?.id == this.produtoSelecionado.id){
-      console.log("produto já adicionado")
+      this.openMOdal()
     } else {
 
       const cart = localStorage['cart'] ? JSON.parse(localStorage['cart']) : [];
@@ -94,6 +142,12 @@ export class GenericProductListComponent implements OnInit {
     modalRef.componentInstance.name = 'aqui';
   }
 
+
+  openMOdal() {
+    const modalRef = this.modalService.open(ModalMsg);
+    modalRef.componentInstance.name = this.controle;
+
+  }
 }
 
 
