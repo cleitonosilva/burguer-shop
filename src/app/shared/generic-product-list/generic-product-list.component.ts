@@ -12,21 +12,21 @@ import { GenericModalComponent } from '../generic-modal/generic-modal.component'
   template: `
    
    
-   <!-- <div class="modal-header" style="background: #E32C2C; color: #FFFFFF" >
-    <h4  class="modal-title"> Olá visitante, faça <a class="modal-title" href="/login">Login</a> ou <a class="modal-title" href="/cadastro">Cadastre-se</a> </h4>
-  </div> -->
-  
+   <div class="modal-header" style="background: #E32C2C; color: #FFFFFF" >
+    <h4  class="modal-title"> Olá {{name}}!  </h4>
+  </div>
   
 
-  <div  class="modal-header" style="background: #E32C2C; color: #FFFFFF" >
+  <!-- <div *ngIf="!name"  class="modal-header" style="background: #E32C2C; color: #FFFFFF" >
     <h4  class="modal-title"> Olá visitante, faça <a class="modal-title" href="/login">Login</a> ou <a class="modal-title" href="/cadastro">Cadastre-se</a> </h4>
-  </div>
+  </div> -->
 
  
   <div class="modal-body d-flex" >
    <h4>Produto já adicionado!<br> Altere as quantidades de cada item <br> direto no <a class="modal-title" href="/carrinho">Carrinho</a> .</h4>
   </div>  
 
+  
 
 <div class="modal--itens">
   
@@ -35,7 +35,8 @@ import { GenericModalComponent } from '../generic-modal/generic-modal.component'
   `
 })
 export class ModalMsg {
-  @Input() controle : boolean;
+  @Input() name : any ;
+  
 
   constructor(public activeModal: NgbActiveModal) {}
 }
@@ -53,7 +54,8 @@ export class ModalMsg {
 export class GenericProductListComponent implements OnInit {
   @Input() produtos: Produto[];
   userLog: Register[];
-  controle: boolean = false
+  controle: string = 'Visitante'
+  user: any 
 
   produtoSelecionado: Produto;
   listaDeProdutos : Produto [] = []
@@ -61,20 +63,16 @@ export class GenericProductListComponent implements OnInit {
   item: any
   // produtosVindoDaPagina: Produto [];
 
-  constructor(public produtosService : ProdutosService, private modalService: NgbModal) { }
+  constructor(
+    public produtosService : ProdutosService,
+    private modalService: NgbModal,
+    ) { }
 
   
   ngOnInit(): void {
     this.produtosService.getProdutos().subscribe(x  => {
     this.listaDeProdutos = x})
-
-
-    const storageValueLog = JSON.parse(String(localStorage.getItem('userLog')));
-      this.userLog = storageValueLog;
-
-      if(this.userLog){
-        this.controle = true
-      }
+   
 
   }
   
@@ -144,13 +142,32 @@ export class GenericProductListComponent implements OnInit {
   open() {
 
     const modalRef = this.modalService.open(GenericModalComponent);
-    modalRef.componentInstance.name = 'aqui';
+    
   }
 
 
   openMOdal() {
-    const modalRef = this.modalService.open(ModalMsg);
-    modalRef.componentInstance.name = this.controle;
+
+    const storageValueLog = JSON.parse(String(localStorage.getItem('userLog')));
+      this.userLog = storageValueLog;
+
+      if(this.userLog){
+        for (let item of this.userLog){
+          const name = item.nome
+          const modalRefLog = this.modalService.open(ModalMsg);
+
+          modalRefLog.componentInstance.name = name;
+
+        }
+      } else {
+
+        const modalRefLog = this.modalService.open(ModalMsg);
+
+        modalRefLog.componentInstance.name = "Visitante, faça o login ou cadastre-se";
+
+      }
+    
+    
 
   }
 }
