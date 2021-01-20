@@ -1,39 +1,35 @@
 
 <ng-template [ngIf]="controle">
-  <div class="modal-header" >
+  <div class="modal-header modal--box " >
     <h4  class="modal-title"  *ngFor="let item of userLog" >{{item.nome}} </h4>
-      <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
   </div>
 </ng-template>
 
 <ng-template [ngIf]="!controle">
-  <div class="modal-header" >
-    <h4  class="modal-title"> Olá visitante, faça Login ou cadastre-se </h4>
-      <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
+  <div class="modal-header modal--box" >
+    <h4  class="modal-title"> Olá visitante, faça <a class="modal-title" href="/login">Login</a> ou <a class="modal-title" href="/cadastro">Cadastre-se</a> </h4>
   </div>
 </ng-template>
 
-
  
   <div class="modal-body">
+    <h3> Boa Pedida! Você escolheu: </h3>
 <div *ngFor="let item of produtosVindoDaPagina">
-    <p> Boa Pedida! Você escolheu: </p>
-    <p> {{item.produto}}</p>
+    <p class="modal--product"> {{item.produto}}</p>
 </div>  
 
-<div>
-{{produtosVindoDaPagina.length}} itens no seu carrinho, deseja incluir mais algum pedido ?
+<p class="modal--msg"> Altere as quantidade de cada item direto no carrinho! </p>
 
-<button type="button" (click)="continuarComprando()">Sim, quero</button>
-<button type="button" (click)="irParaCarrinho()" (click)="activeModal.close('Close click')" >Não, Me leve para o carrinho!</button>
+<div class="modal--itens">
+  <p class="itens--total">{{produtosVindoDaPagina.length}}</p><p class="itens--info">itens no seu carrinho, deseja incluir mais algum pedido ? </p>
+</div>
+
+<div class="modal--box--btn">
+
+<button class="modal--btn" type="button" (click)="continuarComprando()">Sim, quero</button>
+<button class="modal--btn" type="button" (click)="irParaCarrinho()" (click)="activeModal.close('Close click')" >Não, Me leve para o carrinho!</button>
 
 </div>
 
 </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
-  </div>
+  
