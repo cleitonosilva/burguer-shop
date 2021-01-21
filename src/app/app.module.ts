@@ -33,6 +33,7 @@ import { GenericModalComponent } from './shared/generic-modal/generic-modal.comp
 import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import { StoreModule } from '@ngrx/store';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,13 +72,9 @@ import { StoreModule } from '@ngrx/store';
       timeOut: 10000,
     positionClass: 'toast-bottom-right',
     progressBar: true
-}),
+}),NgbModule,
 
-    NgbModule,
-
-    StoreModule.forRoot({}, {}),
-     
-  ],
+],
   providers: [AuthService, AuthGuards],
   bootstrap: [AppComponent]
 })
