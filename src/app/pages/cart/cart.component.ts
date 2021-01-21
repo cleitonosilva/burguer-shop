@@ -22,55 +22,65 @@ export class CartComponent implements OnInit {
   constructor(public produtosService: ProdutosService, private router: Router) { }
 
   ngOnInit(): void {
+    // debugger
 
     const storageValue = JSON.parse(String(localStorage.getItem('cart')));
     this.produtosVindoDaPagina = storageValue;
 
-
-    // const storageValueItem = JSON.parse(String(localStorage.getItem('item')));
-    // this.item = storageValueItem;
-
+    
     if(this.produtosVindoDaPagina){
-    this.produtosVindoDaPagina = this.produtosVindoDaPagina.map( x => ({...x, quantidade: 1, valorTotal: x.preco}))}
-
-    this.produtosService.getProdutos().subscribe(x =>{
-      this.produtos = x
-    })
-
-    if(this.produtosVindoDaPagina){
-    this.itemQuantidade = this.produtosVindoDaPagina.length
+      this.produtosVindoDaPagina = this.produtosVindoDaPagina.map( x =>
+        ({...x, quantidade: x.quantidade > 1 ? x.quantidade : 1 , valorTotal: x.quantidade >1 ? x.preco * x.quantidade: x.preco}))
+        
+        
+        // this.itemQuantidade = this.produtosVindoDaPagina.length
+     
+    
+     for(let i of this.produtosVindoDaPagina){
+       this.itemQuantidade += i.quantidade
+       this.valorTotal += i.valorTotal 
+    }
     }
 
-    if(this.produtosVindoDaPagina){
-      for(let i of this.produtosVindoDaPagina){
-        this.valorTotal += i.valorTotal
-      }
-    }
-  }
+   }
 
   decrement(item : Produto){
     if(item.quantidade > 1 ){
+      
+      const atualizar =
       this.produtosVindoDaPagina = this.produtosVindoDaPagina.map(
         x => x.id === item.id ? ({...x, quantidade: x.quantidade - 1}) : x)
 
+      localStorage.setItem('cart', JSON.stringify(atualizar));
+      
+      const storageValue = JSON.parse(String(localStorage.getItem('cart')));
+      this.produtosVindoDaPagina = storageValue;
+
+      const atualizarValor =  this.produtosVindoDaPagina = this.produtosVindoDaPagina.map(
+        x => x.id == item.id ? ({...x, valorTotal: x.preco * x.quantidade}) : x)
+
+        localStorage.setItem('cart', JSON.stringify(atualizarValor));
+      
         this.itemQuantidade--
 
         this.valorTotal -= item.preco
+        
 
       }
 
-    this.produtosVindoDaPagina = this.produtosVindoDaPagina.map(
-      x => x.id == item.id ? ({...x, valorTotal: x.preco * x.quantidade}) : x)
+    
     }
 
     increment(item: Produto){
+      const atualizar = 
       this.produtosVindoDaPagina = this.produtosVindoDaPagina.map(
         x => x.id === item.id ? ({...x, quantidade: x.quantidade + 1}) : x)
         this.itemQuantidade++
-
         this.produtosVindoDaPagina = this.produtosVindoDaPagina.map(
           x => x.id == item.id ? ({...x, valorTotal: x.preco * x.quantidade}) : x)
-
+          
+          localStorage.setItem('cart', JSON.stringify(atualizar));
+        // ----------------------------- A representa o valor inicial B representa o proximo valor da lista a ser somado com o passado que é o A
         this.valorTotal = this.produtosVindoDaPagina.reduce((a,b) => a + b.valorTotal, 0 )
         }
 

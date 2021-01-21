@@ -127,7 +127,7 @@ export class GenericProductListComponent implements OnInit {
         url: this.produtoSelecionado.url,
         categoria: this.produtoSelecionado.categoria,
         descricao: this.produtoSelecionado.descricao,
-        grif: this.produtoSelecionado.grif
+        grif: this.produtoSelecionado.grif,
       });
       
       this.open()
