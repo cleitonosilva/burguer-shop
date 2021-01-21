@@ -31,6 +31,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { GenericModalComponent } from './shared/generic-modal/generic-modal.component';
 import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,8 @@ import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 }),
 
     NgbModule,
+
+    StoreModule.forRoot({}, {}),
      
   ],
   providers: [AuthService, AuthGuards],

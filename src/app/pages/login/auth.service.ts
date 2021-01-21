@@ -53,6 +53,12 @@ registerLog: any
         this.showSuccess("login efetuado com sucesso")
         this.router.navigate(['/carrinho']);
     }
+
+    else if (  usuario.email == String(useremail?.email) &&
+      usuario.senha != String(useremail?.senha)  ){
+      this.userAuth = false,
+      this.showError("1 ou mais campos estão incorretos ou vazios!")
+      }
     
     else if (  usuario.email == String(useremail?.email) &&
       usuario.senha !== "" ){
@@ -61,13 +67,7 @@ registerLog: any
         
       } 
 
-    else if (  usuario.email == String(useremail?.email) &&
-      usuario.senha !== String(useremail?.senha)){
-      this.userAuth = false,
-      this.showError("Senha Incorreta")
-      } 
-
-      else if(usuario.email == undefined){
+          else if(usuario.email == undefined){
         this.userAuth = false,
         this.showWarn(`Por favor insira um email ou cadastra-se!`)
       }    
