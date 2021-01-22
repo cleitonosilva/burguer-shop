@@ -12,7 +12,7 @@
         <button class="btn  me-2 nav--item " type="button" [routerLink]="['/promocoes']" routerLinkActive="router-link-active">Promoções</button>
         <button class="btn  me-2 nav--item " type="button">Contato</button>
         <button class="btn  me-2 nav--item " type="button" [routerLink]="['/carrinho']" routerLinkActive="router-link-active">
-          <p *ngIf="itemControle" class="nav--p">{{produtosVindoDaPagina.length}} </p>
+          <p *ngIf="itemControle" class="nav--p">{{valor}} </p>
           <img  src="../../assets/img/cesta.svg" alt="" >
         </button>
         <button *ngIf="!authUser" class="btn  me-2 nav--item" type="button" [routerLink]="['/cadastro']" routerLinkActive="router-link-active">

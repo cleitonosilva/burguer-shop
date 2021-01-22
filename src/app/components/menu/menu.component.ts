@@ -12,29 +12,53 @@ import { ProdutosService } from 'src/app/services/produtos.service';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-
+  @Input() RecebeItens: Produto[];
+  
   produtosVindoDaPagina: Produto []
   itemQuantidade = 0
   itemControle: boolean = false
   item: Item[] 
   authUser: boolean = false
+  numeroCarrinho: number = 0
+  valor: number 
   constructor(private authService: AuthService, private produtosService : ProdutosService) { }
 
   
   ngOnInit(): void {
     // this.produtosService.currentMenssage.subscribe(users => console.log(users) ); ;
 
+    this.produtosService.getValor().subscribe(novoValor => this.valor = novoValor)
+    
      const storageValue = JSON.parse(String(localStorage.getItem('cart')));
       this.produtosVindoDaPagina = storageValue;
       if(this.produtosVindoDaPagina){
 
         if(this.produtosVindoDaPagina.length > 0 ){
-          this.itemControle = true
-        }
-        
+          this.itemControle = true;
+        };
       }
-      this.authUser = this.authService.usuarioEstaAutenticado()
-      console.log(this.authUser)
-  }
+      
+      if(this.produtosVindoDaPagina){
+        for ( let item of this.produtosVindoDaPagina){
+          if ( !item.quantidade){
+            const soma = this.produtosVindoDaPagina.length;
+            this.produtosService.emitirValor(soma);      
+          } else {
+            const soma = this.produtosVindoDaPagina.reduce((a, b) => a + b.quantidade, 0);
+            this.produtosService.emitirValor(soma);     
+          }
+        }
+      }
+
+      // console.log(this.produtosVindoDaPagina);
+
+      // const somaDosValores = this.produtosVindoDaPagina.reduce( (a,b) => a + b.quantidade, 0 );
+      // this.produtosService.emitirValor(somaDosValores);      
+      
+
+
+      this.authUser = this.authService.usuarioEstaAutenticado();
+      
+  };
 
 }
