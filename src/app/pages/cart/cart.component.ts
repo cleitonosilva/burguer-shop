@@ -10,14 +10,13 @@ import { Item } from 'src/app/models/item';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-
-  produtos: Produto [] = []
-  produtosVindoDaPagina: Produto []
-  preco: string
-  totalItens: number =1
-  itemQuantidade: number = 0
-  valorTotal: number = 0
-  item: Item []
+  produtos: Produto [] = [];
+  produtosVindoDaPagina: Produto [];
+  preco: string;
+  totalItens: number =1;
+  itemQuantidade: number = 0;
+  valorTotal: number = 0;
+  item: Item [];
 
   constructor(public produtosService: ProdutosService, private router: Router) { }
 
@@ -27,29 +26,32 @@ export class CartComponent implements OnInit {
     const storageValue = JSON.parse(String(localStorage.getItem('cart')));
     this.produtosVindoDaPagina = storageValue;
 
-    
     if(this.produtosVindoDaPagina){
       this.produtosVindoDaPagina = this.produtosVindoDaPagina.map( x =>
-        ({...x, quantidade: x.quantidade > 1 ? x.quantidade : 1 , valorTotal: x.quantidade >1 ? x.preco * x.quantidade: x.preco}))
+        ({...x, quantidade: x.quantidade > 1 ? x.quantidade : 1 , valorTotal: x.quantidade >1 ? x.preco * x.quantidade: x.preco}));
         
-        
-        // this.itemQuantidade = this.produtosVindoDaPagina.length
-     
-    
      for(let i of this.produtosVindoDaPagina){
-       this.itemQuantidade += i.quantidade
-       this.valorTotal += i.valorTotal 
-    }
-    }
+       this.itemQuantidade += i.quantidade;
+       this.valorTotal += i.valorTotal;
+    };
+  };
 
-   }
+
+  // const somaDosValores = this.produtosVindoDaPagina.reduce( (a,b) => a + b.quantidade, 0 ) 
+  //     if(somaDosValores <= 0){
+  //       this.produtosService.emitirValor(this.produtosVindoDaPagina.length)
+  //     } else{
+  //     this.produtosService.emitirValor(somaDosValores)
+  //     };
+    
+   };
 
   decrement(item : Produto){
     if(item.quantidade > 1 ){
       
       const atualizar =
       this.produtosVindoDaPagina = this.produtosVindoDaPagina.map(
-        x => x.id === item.id ? ({...x, quantidade: x.quantidade - 1}) : x)
+        x => x.id === item.id ? ({...x, quantidade: x.quantidade - 1}) : x);
 
       localStorage.setItem('cart', JSON.stringify(atualizar));
       
@@ -63,31 +65,42 @@ export class CartComponent implements OnInit {
       
         this.itemQuantidade--
 
-        this.valorTotal -= item.preco
-        
+        this.valorTotal -= item.preco;
 
-      }
-
-    
+      const somaDosValores = this.produtosVindoDaPagina.reduce( (a,b) => a + b.quantidade, 0 ) 
+        this.produtosService.emitirValor(somaDosValores)
     }
+  }
 
     increment(item: Produto){
       const atualizar = 
       this.produtosVindoDaPagina = this.produtosVindoDaPagina.map(
-        x => x.id === item.id ? ({...x, quantidade: x.quantidade + 1}) : x)
+        x => x.id === item.id ? ({...x, quantidade: x.quantidade + 1}) : x);
         this.itemQuantidade++
         this.produtosVindoDaPagina = this.produtosVindoDaPagina.map(
-          x => x.id == item.id ? ({...x, valorTotal: x.preco * x.quantidade}) : x)
+          x => x.id == item.id ? ({...x, valorTotal: x.preco * x.quantidade}) : x);
           
           localStorage.setItem('cart', JSON.stringify(atualizar));
         // ----------------------------- A representa o valor inicial B representa o proximo valor da lista a ser somado com o passado que é o A
-        this.valorTotal = this.produtosVindoDaPagina.reduce((a,b) => a + b.valorTotal, 0 )
-        }
+        this.valorTotal = this.produtosVindoDaPagina.reduce((a,b) => a + b.valorTotal, 0 );
+        
+        
+        const somaDosValores = this.produtosVindoDaPagina.reduce( (a,b) => a + b.quantidade, 0 ) 
+        this.produtosService.emitirValor(somaDosValores)
+
+
+        };
+
+    emitirValor(valor: number){
+      this.produtosService.emitirValor(valor)
+    }    
+
+
 
     finishCar(){
       localStorage.clear();
-      window.location.reload()
-      this.router.navigate([''])
+      window.location.reload();
+      this.router.navigate(['']);
     }
 
     // totalItensMenu(total : number){
