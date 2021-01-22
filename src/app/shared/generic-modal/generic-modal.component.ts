@@ -4,6 +4,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Produto } from 'src/app/models/products.model';
 import { Register } from 'src/app/models/register';
 import { AuthService } from 'src/app/pages/login/auth.service';
+import { ProdutosService } from 'src/app/services/produtos.service';
 
 @Component({
   selector: 'app-generic-modal',
@@ -20,7 +21,8 @@ export class GenericModalComponent implements OnInit {
     private modalService: NgbModal,
     public activeModal: NgbActiveModal,
     private router: Router,
-    private authService: AuthService) { }
+    private authService: AuthService,
+    private produtosService: ProdutosService) { }
 
   ngOnInit(): void {
     const storageValue = JSON.parse(String(localStorage.getItem('cart')));
@@ -32,16 +34,14 @@ export class GenericModalComponent implements OnInit {
       if(this.userLog){
         this.controle = true
       }
-
-    
+      
   }
 
   continuarComprando(){
-    window.location.reload()
+    
   }
 
   irParaCarrinho(){
     this.router.navigate(['/carrinho'])
   }
-
 }
