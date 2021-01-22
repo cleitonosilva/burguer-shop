@@ -3,6 +3,7 @@ import { Produto } from 'src/app/models/products.model';
 import { ProdutosService } from 'src/app/services/produtos.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Item } from 'src/app/models/item';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
@@ -17,6 +18,7 @@ export class CartComponent implements OnInit {
   itemQuantidade: number = 0;
   valorTotal: number = 0;
   item: Item [];
+  unsub$ = new Subject();
 
   constructor(public produtosService: ProdutosService, private router: Router) { }
 
@@ -109,15 +111,17 @@ export class CartComponent implements OnInit {
      this.produtosService.emitirValor(somaDosValores)
      
      window.location.reload();
-     
 
     }
 
 
     finishCar(){
       localStorage.clear();
-      window.location.reload();
+      this.unsub$.next();
+      this.unsub$.complete();
       this.router.navigate(['']);
+      
+    
     }
 
     // totalItensMenu(total : number){
