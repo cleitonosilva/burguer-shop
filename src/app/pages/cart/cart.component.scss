@@ -93,6 +93,13 @@
       display: flex;
       flex-direction: row;
 
+      .amount--excluise{
+        display: flex;
+        flex-direction: flex-end;
+        
+
+      }
+
       .amount--btn--decrement {
         width: 72px;
         height: 61px;
@@ -217,6 +224,19 @@
           color: #e32c2c;
         }
       }
+
+      .amount--img{
+        height: 40px;
+      width: 40px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      margin-top: 160px;
+
+      }
+
+
+
     }
   }
   .wrapper--box {

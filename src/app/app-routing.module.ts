@@ -16,9 +16,9 @@ const routes: Routes = [
   { path: 'promocoes', component: HomeComponent },
   { path: 'login', component: LoginComponent},
   { path: 'cadastro', component: RegisterComponent},
-  // { path: 'carrinho', component: CartComponent},
-    { path: 'carrinho', component: CartComponent, 
-    canActivate: [AuthGuards]},
+  { path: 'carrinho', component: CartComponent},
+    // { path: 'carrinho', component: CartComponent, 
+    // canActivate: [AuthGuards]},
 ];
 
 @NgModule({

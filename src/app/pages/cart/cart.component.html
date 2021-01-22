@@ -16,11 +16,19 @@
         </div>
 
         <div class="box--amount">
+
             <button class="amount--btn--decrement" (clik)="emitirValor(item.quantidade)"  (click)="decrement(item)"> - </button>
             <input class="amount--input"  [(ngModel)]="item.quantidade" readonly>
             <button class="amount--btn--increment" (clik)="emitirValor(item.quantidade)" (click)="increment(item)"> <p> + </p> </button>
-            <div class="amount--value"> <p class="value--text">{{item.valorTotal | currency:'R$ '}}</p> </div>
+            <div class="amount--value">
+                <p class="value--text">{{item.valorTotal | currency:'R$ '}}</p>
+            </div>
+
+            <img (click)="excluirItem()" class="amount--img" src="../../../assets/img/lixeira.svg" alt="">
+
         </div>
+
+
     </div>
 
     <div class="wrapper--box" >

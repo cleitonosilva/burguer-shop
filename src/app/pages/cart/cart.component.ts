@@ -36,7 +36,6 @@ export class CartComponent implements OnInit {
     };
   };
 
-
   // const somaDosValores = this.produtosVindoDaPagina.reduce( (a,b) => a + b.quantidade, 0 ) 
   //     if(somaDosValores <= 0){
   //       this.produtosService.emitirValor(this.produtosVindoDaPagina.length)
@@ -95,6 +94,9 @@ export class CartComponent implements OnInit {
       this.produtosService.emitirValor(valor)
     }    
 
+    excluirItem(){
+      
+    }
 
 
     finishCar(){
