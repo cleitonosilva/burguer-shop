@@ -4,6 +4,7 @@ import { ProdutosService } from 'src/app/services/produtos.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Item } from 'src/app/models/item';
 import { Subject } from 'rxjs';
+import { AuthService } from '../login/auth.service';
 
 @Component({
   selector: 'app-cart',
@@ -20,7 +21,10 @@ export class CartComponent implements OnInit {
   item: Item [];
   unsub$ = new Subject();
 
-  constructor(public produtosService: ProdutosService, private router: Router) { }
+  constructor(
+    public produtosService: ProdutosService,
+    private router: Router,
+    authService: AuthService) { }
 
   ngOnInit(): void {
     // debugger
@@ -105,10 +109,11 @@ export class CartComponent implements OnInit {
      const filtro = this.produtosVindoDaPagina.filter(filtro => filtro.id != item)
      localStorage.setItem('cart', JSON.stringify(filtro));
       
-     this.produtosVindoDaPagina = filtro 
+     this.produtosVindoDaPagina = filtro;
 
      const somaDosValores = this.produtosVindoDaPagina.reduce( (a,b) => a + b.quantidade, 0 ) 
-     this.produtosService.emitirValor(somaDosValores)
+     this.produtosService.emitirValor(somaDosValores);
+     
      
      window.location.reload();
 

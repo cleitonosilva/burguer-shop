@@ -37,7 +37,7 @@ export class GenericModalComponent implements OnInit {
       this.product = storageValueProduct;
                 
       if(this.userLog){
-        this.controle = true
+        this.controle = true;
       }
       
   }

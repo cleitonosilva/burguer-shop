@@ -16,13 +16,20 @@ private userAuth: boolean = false;
 register: Register[] = []
 registerSelect: any
 registerLog: any
-
+storageValueLog = JSON.parse(String(localStorage.getItem('userLog')));
+       
 
 
   constructor(
     private router: Router,
     private registerService: RegisterService,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService) {
+
+      if (this.storageValueLog){
+        this.userAuth = true;
+      }
+
+     }
 
   fazerLogin(usuario: User){
 
@@ -45,6 +52,7 @@ registerLog: any
           pontoReferencia: useremail?.pontoReferencia,
           nome: useremail?.nome,
           sobrenome: useremail?.sobrenome,
+          auth: 1
         });
   
         localStorage.setItem('userLog', JSON.stringify(userLog));
