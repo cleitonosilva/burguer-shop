@@ -1,3 +1,3 @@
 export class Item{
-    qunatidade: number
+    quantidade: number
 }
