@@ -23,6 +23,8 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     // debugger
 
+    localStorage.removeItem('product');
+
     const storageValue = JSON.parse(String(localStorage.getItem('cart')));
     this.produtosVindoDaPagina = storageValue;
 
@@ -94,8 +96,21 @@ export class CartComponent implements OnInit {
       this.produtosService.emitirValor(valor)
     }    
 
-    excluirItem(){
+    excluirItem(item: number){
+      const storageValue = JSON.parse(String(localStorage.getItem('cart')));
+      this.produtosVindoDaPagina = storageValue;
       
+     const filtro = this.produtosVindoDaPagina.filter(filtro => filtro.id != item)
+     localStorage.setItem('cart', JSON.stringify(filtro));
+      
+     this.produtosVindoDaPagina = filtro 
+
+     const somaDosValores = this.produtosVindoDaPagina.reduce( (a,b) => a + b.quantidade, 0 ) 
+     this.produtosService.emitirValor(somaDosValores)
+     
+     window.location.reload();
+     
+
     }
 
 

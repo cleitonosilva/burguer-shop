@@ -24,7 +24,7 @@
                 <p class="value--text">{{item.valorTotal | currency:'R$ '}}</p>
             </div>
 
-            <img (click)="excluirItem()" class="amount--img" src="../../../assets/img/lixeira.svg" alt="">
+            <img (click)="excluirItem(item.id)" class="amount--img" src="../../../assets/img/lixeira.svg" alt="">
 
         </div>
 

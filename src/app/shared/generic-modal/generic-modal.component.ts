@@ -55,10 +55,13 @@ export class GenericModalComponent implements OnInit {
 
                 window.location.reload();
               }
+              localStorage.removeItem('product');
               
             } else {
               const soma = this.produtosVindoDaPagina.reduce((a, b) => a + b.quantidade, 0);
-              this.produtosService.emitirValor(soma);     
+              this.produtosService.emitirValor(soma);  
+              localStorage.removeItem('product');
+
             }
           }
       
