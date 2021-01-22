@@ -35,20 +35,15 @@ export class MenuComponent implements OnInit {
 
         if(this.produtosVindoDaPagina.length > 0 ){
           this.itemControle = true;
-        };
-      }
-      
-      if(this.produtosVindoDaPagina){
-        for ( let item of this.produtosVindoDaPagina){
-          if ( !item.quantidade){
-            const soma = this.produtosVindoDaPagina.length;
-            this.produtosService.emitirValor(soma);      
-          } else {
-            const soma = this.produtosVindoDaPagina.reduce((a, b) => a + b.quantidade, 0);
-            this.produtosService.emitirValor(soma);     
+          for ( let item of this.produtosVindoDaPagina){
+              const soma = this.produtosVindoDaPagina.reduce((a, b) => a + b.quantidade, 0);
+              this.produtosService.emitirValor(soma);     
+            }
           }
-        }
-      }
+        };
+      
+      
+     
 
       // console.log(this.produtosVindoDaPagina);
 

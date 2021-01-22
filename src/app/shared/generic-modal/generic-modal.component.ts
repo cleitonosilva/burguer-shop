@@ -15,7 +15,9 @@ export class GenericModalComponent implements OnInit {
   @Input() name: any;
   produtosVindoDaPagina: Produto [];
   userLog: Register[]
-  controle: boolean = false
+  controle: boolean = false;
+  product: string;
+  urlimage: string;
 
   constructor(
     private modalService: NgbModal,
@@ -31,6 +33,9 @@ export class GenericModalComponent implements OnInit {
       const storageValueLog = JSON.parse(String(localStorage.getItem('userLog')));
       this.userLog = storageValueLog;
 
+      const storageValueProduct = JSON.parse(String(localStorage.getItem('product')));
+      this.product = storageValueProduct;
+                
       if(this.userLog){
         this.controle = true
       }
@@ -38,7 +43,27 @@ export class GenericModalComponent implements OnInit {
   }
 
   continuarComprando(){
-    
+    const storageValue = JSON.parse(String(localStorage.getItem('cart')));
+      this.produtosVindoDaPagina = storageValue;
+      if(this.produtosVindoDaPagina){
+
+          for ( let item of this.produtosVindoDaPagina){
+            if ( item.quantidade){
+              const soma = this.produtosVindoDaPagina.reduce((a, b) => a + b.quantidade, 0);
+              this.produtosService.emitirValor(soma);      
+              if(soma <= 1){
+
+                window.location.reload();
+              }
+              
+            } else {
+              const soma = this.produtosVindoDaPagina.reduce((a, b) => a + b.quantidade, 0);
+              this.produtosService.emitirValor(soma);     
+            }
+          }
+      
+      }
+
   }
 
   irParaCarrinho(){

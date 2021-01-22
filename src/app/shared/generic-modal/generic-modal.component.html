@@ -14,14 +14,14 @@
  
   <div class="modal-body">
     <h3> Boa Pedida! Você escolheu: </h3>
-<div *ngFor="let item of produtosVindoDaPagina">
-    <p class="modal--product"> {{item.produto}}</p>
+<div >
+    <p class="modal--product"> {{product}}</p>
 </div>  
 
 <p class="modal--msg"> Altere as quantidade de cada item direto no carrinho! </p>
 
 <div class="modal--itens">
-  <p class="itens--total">{{produtosVindoDaPagina.length}}</p><p class="itens--info">itens no seu carrinho, deseja incluir mais algum pedido ? </p>
+  <p class="itens--info"> deseja incluir mais algum pedido ? </p>
 </div>
 
 <div class="modal--box--btn">

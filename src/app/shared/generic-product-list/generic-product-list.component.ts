@@ -72,8 +72,6 @@ export class GenericProductListComponent implements OnInit {
   ngOnInit(): void {
     this.produtosService.getProdutos().subscribe(x  => {
     this.listaDeProdutos = x})
-   
-
   }
   
   ProdutoSelecionado(produto: any){
@@ -100,12 +98,21 @@ export class GenericProductListComponent implements OnInit {
         url: this.produtoSelecionado.url,
         categoria: this.produtoSelecionado.categoria,
         descricao: this.produtoSelecionado.descricao,
-        grif: this.produtoSelecionado.grif
+        grif: this.produtoSelecionado.grif,
+        quantidade: 1
+
       });
+            
+      const product = this.produtoSelecionado.produto;
       
+
       this.open()
 
       localStorage.setItem('cart', JSON.stringify(cart));
+      localStorage.setItem('product', JSON.stringify(product));
+      
+      
+    
     }
   else {
     const storageValue = JSON.parse(String(localStorage.getItem('cart')));
@@ -128,19 +135,31 @@ export class GenericProductListComponent implements OnInit {
         categoria: this.produtoSelecionado.categoria,
         descricao: this.produtoSelecionado.descricao,
         grif: this.produtoSelecionado.grif,
+        quantidade: 1
       });
       
+      const product = this.produtoSelecionado.produto;
+      
+
       this.open()
 
       localStorage.setItem('cart', JSON.stringify(cart));
+      localStorage.setItem('product', JSON.stringify(product));
+      
 
 
     }
+
+
   }
+
+  
+
+
 }
  
   open() {
-
+    
     const modalRef = this.modalService.open(GenericModalComponent);
     
   }
