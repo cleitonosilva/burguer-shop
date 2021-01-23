@@ -14,7 +14,7 @@ O **Burguer Shop** é um projeto criado para estudo e aplicação de conheciment
 
 # Fonte 
 
-O projeto foi desenhado por Robson Maia https://github.com/robsonmvieira em um exercício de melhoria de criação em Ui e UX. Com base em seu desenho fui desenvolvendo a aplicação e estipulando algumas regras de negócio. 
+O projeto foi desenhado por Robson Maia https://github.com/robsonmvieira em um exercício de melhoria de criação em Ui e UX. Com base em seu desenho fui desenvolvendo a aplicação e estipulando algumas das regras de negócio. 
 
 
 # Tecnologias utilizadas
