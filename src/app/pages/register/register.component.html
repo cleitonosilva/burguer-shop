@@ -1,0 +1,80 @@
+<app-menu></app-menu>
+
+      <section class="register">
+          <h2 class="register--title">Cadastro</h2>
+
+        <div class="register--box">
+          <div class="register--wrapper">
+            
+            <form [formGroup]="formRegister" (ngSubmit)="fazerCadastro()">
+                          
+              
+                <div>
+                  <label for="telefone">Nome: </label>
+                  <input type="text" formControlName="nome" class="form-control">
+                </div>
+
+                <div>
+                  <label for="telefone">SobreNome: </label>
+                  <input type="text" formControlName="sobrenome" class="form-control">
+                </div>
+
+                <div>
+                  <label for="email">E-mail: </label>
+                  <input type="text" class="form-control" formControlName="email">
+                </div>
+              
+                <div>
+                  <label for="senha">Senha: </label>
+                  <input id="senha" type="password" class="form-control" formControlName="senha">
+                  <div *ngIf = "formRegister.controls['senha']?.pristine">
+                    <p *ngIf = "formRegister.controls['senha']?.touched" >
+                      Senha é obrigatória.
+                    </p>
+                    <!-- <p *ngIf="senha?.errors?.minlength">
+                      Senha deve ter no mínimo 6 caracters.
+                    </p>
+                    <p *ngIf="senha?.errors?.maxlength">
+                      Senha deve ter no máximo 12 caracters.
+                    </p> -->
+                  </div>
+                </div>
+              
+                <div>
+                  <label for="confirmarSenha">Confirmar Senha: </label>
+                  <input id="confirmarSenha" type="password" class="form-control" formControlName="confirmarSenha">
+                  <div *ngIf = "formRegister.controls['confirmarSenha']?.touched">
+                    <p *ngIf="formRegister.value.confirmarSenha != formRegister.value.senha">
+                      As senhas não coincidem.
+                    </p>
+                  </div>
+                </div>
+
+              
+                <div>
+                  <label for="endereco">Endereço: </label>
+                  <input type="text" formControlName="endereco" class="form-control">
+                </div>
+              
+                <div>
+                  <label for="telefone">Telefone: </label>
+                  <input type="text" formControlName="telefone" class="form-control">
+                </div>
+              
+                <div>
+                  <label for="referencia">Ponto de referencia: </label>
+                  <input type="text" formControlName="pontoReferencia" class="form-control">
+                </div>
+              
+                <br>
+                <div *ngIf="formRegister.value.confirmarSenha === formRegister.value.senha">
+                  <button [disabled]="!formRegister.valid" class="btn">Enviar dados</button>
+                </div>
+              
+                <br>
+                <br>
+            </form>
+          </div>
+        </div>
+      </section>
+      <app-footer></app-footer>

@@ -1,15 +1,30 @@
 .footer--body {
-    height: 351px;
+    
     background: #525252;
     margin-top: 60px;
     display: flex;
     justify-content: space-around;
+    margin-bottom: 80px;
 
-.footer--social {
-    width:296px;
-    height: 121px;
-    margin-top: 117px;
- }   
+    @media (max-width: 460px) {
+        display: flex;
+        flex-direction: row;
+        justify-items: center;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    @media (max-width: 920px) {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        
+    }
+    
+
+
+
 
 .social--title {
     color: #ffff;
@@ -30,9 +45,14 @@
  }
 
 .newletter--footer {
-    width:296px;
-    height: 121px;
-    margin-top: 117px;
+    @media (max-width: 460px) {
+        width:90%;
+    }
+
+    @media (max-width: 920px) {
+        width:80%;
+    }
+    
 } 
 
 .newletter--title {

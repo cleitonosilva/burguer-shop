@@ -1,0 +1,35 @@
+
+<ng-template [ngIf]="controle">
+  <div class="modal-header modal--box " >
+    <h4  class="modal-title"  *ngFor="let item of userLog" >{{item.nome}} </h4>
+  </div>
+</ng-template>
+
+<ng-template [ngIf]="!controle">
+  <div class="modal-header modal--box" >
+    <h4  class="modal-title"> Olá visitante, faça <a class="modal-title" href="/login">Login</a> ou <a class="modal-title" href="/cadastro">Cadastre-se</a> </h4>
+  </div>
+</ng-template>
+
+ 
+  <div class="modal-body">
+    <h3> Boa Pedida! Você escolheu: </h3>
+<div >
+    <p class="modal--product"> {{product}}</p>
+</div>  
+
+<p class="modal--msg"> Altere as quantidade de cada item direto no carrinho! </p>
+
+<div class="modal--itens">
+  <p class="itens--info"> deseja incluir mais algum pedido ? </p>
+</div>
+
+<div class="modal--box--btn">
+
+<button class="modal--btn" type="button" (click)="continuarComprando()" (click)="activeModal.close('Close click')">Sim, quero</button>
+<button class="modal--btn" type="button" (click)="irParaCarrinho()" (click)="activeModal.close('Close click')" >Não, Me leve para o carrinho!</button>
+
+</div>
+
+</div>
+  

@@ -1,0 +1,40 @@
+.register {
+    
+
+    .register--title {
+    width: 230px;
+    height: 75px;
+    color: #E32C2C;
+    font-size: 64px;
+    margin-top: 107px;
+    margin-right: 135px;
+    }
+    
+.register--box{
+
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items:center;
+    
+    }
+
+.register--wrapper{
+    width: 674px;
+    height: 783px;
+    display: flex;
+    flex-direction: column;
+    }
+   
+.register--input{
+    margin-top: 10px;
+}    
+
+.btn{
+    background:#E32C2C;
+    color: #ffff;
+    margin-top:20px;
+    width: 182px;
+    margin-left: 73%;
+}
+}

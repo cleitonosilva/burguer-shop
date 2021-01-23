@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {products} from '../../data/products-list-source';
+import { ProdutosService } from 'src/app/services/produtos.service';
 import {Produto} from '../../models/products.model'
 
 @Component({
@@ -11,12 +11,17 @@ import {Produto} from '../../models/products.model'
 export class SnackComponent implements OnInit {
   produtos: Produto[];
 
-  constructor() { }
+  constructor(private produtoService : ProdutosService) { }
 
   ngOnInit(): void {
+    
+    // chama o metodo get da api 
+    this.produtoService.getProdutos().subscribe(tmp => {
+     this.produtos = tmp.filter(f => f.categoria == 'Lanches') // faz o filtro passando uma variavel temporária iterando sobre produtos
+    })
 
-    const filterProduct = products.filter(p =>  p.categoria == 'Lanches');
-    this.produtos = filterProduct
+
+    
   }
 
 }

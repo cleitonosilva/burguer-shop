@@ -8,16 +8,41 @@
     color: #ffff;
     font-size: 19px;
     background: transparent;
+    height: 50%;
 
     &:hover {
         background:#E32C2C;
+    
+    &:hover .nav--p {
+        color:#ffff;
     }
 
+    }
 .nav--title {
         background: none;
         font-size: 19px;
         color: #ffff;
 
+    }
+
+    .nav--cart{
+        display: flex;
+        flex-direction: inherit;
+       
+
+    
+    }
+
+    .nav--p{
+        height: 1px;
+        color: #E32C2C ;
+        display: flex;
+        justify-content: flex-end;
+        font-weight: bold;
+
+        &:hover {
+            color:#ffff;
+        }
     }
 
 }

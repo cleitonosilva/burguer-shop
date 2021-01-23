@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {products} from '../../data/products-list-source';
+import { ProdutosService } from 'src/app/services/produtos.service';
 import {Produto} from '../../models/products.model'
 
 
@@ -13,12 +13,13 @@ export class DrinksComponent implements OnInit {
 
   produtos: Produto[];
 
-  constructor() { }
+  constructor(private produtoService : ProdutosService ) { }
 
   ngOnInit(): void {
      
-    const filterProduct = products.filter(p =>  p.categoria == 'Bebidas');
-    this.produtos = filterProduct
+    this.produtoService.getProdutos().subscribe( res => { 
+      this.produtos = res.filter(f => f.categoria == 'Bebidas')
+      })
 
   }
 
