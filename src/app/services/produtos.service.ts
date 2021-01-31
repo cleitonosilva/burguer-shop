@@ -17,7 +17,7 @@ export class ProdutosService {
 
   constructor(private http: HttpClient) { 
   }
-  private url = "http://localhost:3000/produtos";
+  private url = "http://localhost:3000/products/listar";
 
 
   getProdutos(): Observable<Produto[]> {

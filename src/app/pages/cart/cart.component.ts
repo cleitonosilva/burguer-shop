@@ -66,16 +66,16 @@ export class CartComponent implements OnInit {
       this.produtosVindoDaPagina = storageValue;
 
       const atualizarValor =  this.produtosVindoDaPagina = this.produtosVindoDaPagina.map(
-        x => x.id == item.id ? ({...x, valorTotal: x.preco * x.quantidade}) : x)
+        x => x.id == item.id ? ({...x, valorTotal: x.preco * x.quantidade}) : x);
 
         localStorage.setItem('cart', JSON.stringify(atualizarValor));
       
-        this.itemQuantidade--
+        this.itemQuantidade--;
 
         this.valorTotal -= item.preco;
 
-      const somaDosValores = this.produtosVindoDaPagina.reduce( (a,b) => a + b.quantidade, 0 ) 
-        this.produtosService.emitirValor(somaDosValores)
+      const somaDosValores = this.produtosVindoDaPagina.reduce( (a,b) => a + b.quantidade, 0 );
+        this.produtosService.emitirValor(somaDosValores);
     }
   }
 
@@ -92,32 +92,32 @@ export class CartComponent implements OnInit {
         this.valorTotal = this.produtosVindoDaPagina.reduce((a,b) => a + b.valorTotal, 0 );
         
         
-        const somaDosValores = this.produtosVindoDaPagina.reduce( (a,b) => a + b.quantidade, 0 ) 
-        this.produtosService.emitirValor(somaDosValores)
+        const somaDosValores = this.produtosVindoDaPagina.reduce( (a,b) => a + b.quantidade, 0 ) ;
+        this.produtosService.emitirValor(somaDosValores);
 
 
         };
 
     emitirValor(valor: number){
-      this.produtosService.emitirValor(valor)
-    }    
+      this.produtosService.emitirValor(valor);
+    };
 
     excluirItem(item: number){
       const storageValue = JSON.parse(String(localStorage.getItem('cart')));
       this.produtosVindoDaPagina = storageValue;
       
-     const filtro = this.produtosVindoDaPagina.filter(filtro => filtro.id != item)
+     const filtro = this.produtosVindoDaPagina.filter(filtro => filtro.id != item);
      localStorage.setItem('cart', JSON.stringify(filtro));
       
      this.produtosVindoDaPagina = filtro;
 
-     const somaDosValores = this.produtosVindoDaPagina.reduce( (a,b) => a + b.quantidade, 0 ) 
+     const somaDosValores = this.produtosVindoDaPagina.reduce( (a,b) => a + b.quantidade, 0 );
      this.produtosService.emitirValor(somaDosValores);
      
      
      window.location.reload();
 
-    }
+    };
 
 
     finishCar(){
@@ -127,7 +127,7 @@ export class CartComponent implements OnInit {
       this.router.navigate(['']);
       
     
-    }
+    };
 
     // totalItensMenu(total : number){
       
