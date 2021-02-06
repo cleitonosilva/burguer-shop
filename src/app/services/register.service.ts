@@ -11,7 +11,8 @@ export class RegisterService {
 
 constructor(private http: HttpClient) { }
 
-private url = "http://localhost:3000/user/listarUser";
+private url = "http://localhost:3000/user";
+// private url = "http://localhost:3000/user/listarUser";
 private urls = "http://localhost:3000/user/cadastrarUser"
 // private userLength(){
 //   return this.http.get(this.url)
@@ -19,7 +20,7 @@ private urls = "http://localhost:3000/user/cadastrarUser"
 
 createUser(register: Register) {
 //  const id = this.userLength() 
- return this.http.post(this.urls, register)
+ return this.http.post(this.url, register)
 }
 
 getUser(): Observable<Register[]> {
